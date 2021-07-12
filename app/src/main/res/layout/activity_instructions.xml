@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Instructions">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/colorPrimary"
+            app:cardCornerRadius="35dp"
+            tools:ignore="MissingConstraints">
+
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/contact" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="102dp"
+                android:layout_marginTop="90dp"
+                android:background="#FBC02D"
+                android:gravity="center"
+                android:text='Tap the "siren" button to check its sound level'
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="270dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="35dp"
+            android:layout_height="190dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/date"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="102dp"
+                android:layout_marginTop="90dp"
+                android:background="#FBC02D"
+                android:gravity="center"
+                android:text='Tap the  "Current location" button and allow the required permissions'
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card3"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="500dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="35dp"
+            android:layout_height="190dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/bookmark"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_marginTop="90dp"
+                android:background="#FBC02D"
+                android:gravity="center"
+                android:text="Tap the &quot;Settings&quot; button and save your four trusted relative's phone numbers and the tap try it and allow the required permissions"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card4"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="720dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="35dp"
+            android:layout_height="190dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/chat"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="110dp"
+                android:layout_marginTop="90dp"
+                android:background="#FBC02D"
+                android:gravity="center"
+                android:text='Tap here "Join only female community" to empower  and get empowered.'
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
