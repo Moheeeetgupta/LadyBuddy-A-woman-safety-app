@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -28,16 +29,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-
-        <receiver android:name=".PowerbtnReciever">
+        <receiver android:name=".ScreenOnOffReceiver" >
             <intent-filter>
-                <action android:name="android.intent.action.SCREEN_OFF" />
-                <action android:name="android.intent.action.SCREEN_ON" />
-                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                <action android:name="android.intent.action.SCREEN_OFF"></action>
+                <action android:name="android.intent.action.SCREEN_ON"></action>
+                <action android:name="number.action.string"></action>
             </intent-filter>
         </receiver>
+        <service
+            android:enabled="true"
+            android:exported="false"
+            android:name=".ScreenOnOffBackgroundService">
+        </service>
     </application>
 
 </manifest>

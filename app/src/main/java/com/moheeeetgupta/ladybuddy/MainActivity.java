@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,6 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_main);
+
+        Intent backgroundService = new Intent(getApplicationContext(), ScreenOnOffBackgroundService.class);
+        this.startService(backgroundService);
+        Log.d(ScreenOnOffReceiver.SCREEN_TOGGLE_TAG, "Activity onCreate");
+
         siren=findViewById (R.id.Siren);
         location=findViewById (R.id.send_Location);
         Settings=findViewById (R.id.Settings);
