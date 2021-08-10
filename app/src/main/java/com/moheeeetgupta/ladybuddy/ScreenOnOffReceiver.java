@@ -58,7 +58,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
             powerBtnTapCount++;
             Log.d (SCREEN_TOGGLE_TAG, "Screen is turn on." + powerBtnTapCount);
         }
-        if (powerBtnTapCount ==4) {
+        if ((powerBtnTapCount % 4 == 0 ) && (powerBtnTapCount/4) % 2 == 1) {
 ////            SmsActivity s=new SmsActivity ();
 ////            s.tryIt ();
 //            // Get instance of Vibrator from current Context
@@ -92,13 +92,13 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
             Log.d ("jkjkl", Value1 + " " + Value2 + " " + Value3 + " " + Value4 + " " + Value + " ");
 
         }
-        if(powerBtnTapCount==8){
+        if(powerBtnTapCount % 8==0){
             startSiren();
         }
     }
 
     public void tryIt(Context context) {
-//        SendLocationMessage (context);
+        SendLocationMessage (context);
 //         Get instance of Vibrator from current Context
 //        Vibrator v;
 //        v=(Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
@@ -127,7 +127,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         context.startActivity (intent);
 

@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
@@ -54,29 +55,31 @@ public class ScreenOnOffBackgroundService extends Service {
         // Register the broadcast receiver with the intent filter object.
         registerReceiver(screenOnOffReceiver, intentFilter);
 
-        // Send Notification
-        String notificationTitle = "Demo of Notification!";
-        String notificationText = "Course Website";
-        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(myBlog));
-        @SuppressLint("WrongConstant") PendingIntent pendingIntent
-                = PendingIntent.getActivity(getBaseContext(),
-                0, myIntent,
-                Intent.FLAG_ACTIVITY_NEW_TASK);
 
 
-
-
-        Notification notification = new Notification.Builder(this)
-                .setContentTitle(notificationTitle)
-                .setContentText(notificationText).setSmallIcon(R.mipmap.ic_launcher)
-                .setContentIntent(pendingIntent).build();
-        NotificationManager notificationManager =
-                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        notification.flags = notification.flags
-                | Notification.FLAG_ONGOING_EVENT;
-        notification.flags |= Notification.FLAG_AUTO_CANCEL;
-
-        notificationManager.notify(0, notification);
+//        // Send Notification
+//        String notificationTitle = "Demo of Notification!";
+//        String notificationText = "Course Website";
+//        Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(myBlog));
+//        @SuppressLint("WrongConstant") PendingIntent pendingIntent
+//                = PendingIntent.getActivity(getBaseContext(),
+//                0, myIntent,
+//                Intent.FLAG_ACTIVITY_NEW_TASK);
+//
+//
+//
+//
+//        Notification notification = new Notification.Builder(this)
+//                .setContentTitle(notificationTitle)
+//                .setContentText(notificationText).setSmallIcon(R.mipmap.ic_launcher)
+//                .setContentIntent(pendingIntent).build();
+//        NotificationManager notificationManager =
+//                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//        notification.flags = notification.flags
+//                | Notification.FLAG_ONGOING_EVENT;
+//        notification.flags |= Notification.FLAG_AUTO_CANCEL;
+//
+//        notificationManager.notify(0, notification);
 
         Log.d(ScreenOnOffReceiver.SCREEN_TOGGLE_TAG, "Service onCreate: screenOnOffReceiver is registered.");
     }
