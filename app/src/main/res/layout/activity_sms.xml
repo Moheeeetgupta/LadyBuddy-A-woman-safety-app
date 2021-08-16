@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,13 +21,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
-            app:cardCornerRadius="50dp">
+            app:cardCornerRadius="50dp"
+            app:cardElevation="5dp"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            android:elevation="8dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
@@ -39,6 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:padding="1dp"
                     android:layout_marginRight="10dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter first phone number..."
@@ -55,13 +59,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            android:elevation="5dp"
             app:cardCornerRadius="50dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
@@ -75,6 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
+                    android:padding="1dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter second phone number..."
                     android:inputType="phone"
@@ -89,13 +95,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            android:elevation="5dp"
             app:cardCornerRadius="50dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
@@ -109,6 +116,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
+                    android:padding="1dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter third phone number..."
                     android:inputType="phone"
@@ -123,13 +131,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            android:elevation="5dp"
             app:cardCornerRadius="50dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/messagelayout"
@@ -142,6 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:padding="1dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter fourth phone number..."
                     android:inputType="phone"
@@ -156,13 +166,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            android:elevation="5dp"
             app:cardCornerRadius="50dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/messagelayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/button"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/button"
@@ -175,6 +186,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:padding="1dp"
                     android:layout_marginRight="10dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter message..."

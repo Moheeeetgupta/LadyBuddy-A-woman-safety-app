@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/drawable/button.xml" value="0.2222222222222222" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/font/poppins_bold.xml" value="0.28" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_current_location.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_flashing.xml" value="0.17300724637681159" />
@@ -12,6 +13,8 @@
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_splash.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/each_news_layout.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/progressbar_layout.xml" value="0.1598731884057971" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2111111111111111" />
       </map>
     </option>
   </component>

@@ -16,9 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Instructions"></activity>
+        <activity android:name=".Instructions"
+            android:theme="@style/Theme.New"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/instruction"></activity>
         <activity android:name=".webactivity" />
-        <activity android:name=".SmsActivity" />
+        <activity android:name=".SmsActivity"
+            android:theme="@style/Theme.New"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/setting"/>
         <activity android:name=".CurrentLocation" />
         <activity android:name=".Flashing" />
         <activity android:name=".SplashActivity">
