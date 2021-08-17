@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="false"
-        app:lottie_fileName="clinic.json"/>
+        app:lottie_fileName="ladybuddy.json"/>
 
 
 </RelativeLayout>
