@@ -2,13 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moheeeetgupta.ladybuddy">
 
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,15 +9,41 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Instructions"
-            android:theme="@style/Theme.New"
+        <activity
+            android:name=".MagnoInst"
+            android:exported="true" />
+        <activity
+            android:name=".Outside"
+            android:exported="true" />
+        <activity
+            android:name=".ChangingRoom"
+            android:exported="true" />
+        <activity
+            android:name=".Bedroom"
+            android:exported="true" />
+        <activity
+            android:name=".Bathroom"
+            android:exported="true" />
+        <activity
+            android:name=".ChoosenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NewsActivity"
+            android:exported="true"
+            android:label="@string/news"
             android:parentActivityName=".MainActivity"
-            android:label="@string/instruction"></activity>
+            android:theme="@style/Theme.New" />
+        <activity
+            android:name=".Instructions"
+            android:label="@string/instruction"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.New" />
         <activity android:name=".webactivity" />
-        <activity android:name=".SmsActivity"
-            android:theme="@style/Theme.New"
+        <activity
+            android:name=".SmsActivity"
+            android:label="@string/setting"
             android:parentActivityName=".MainActivity"
-            android:label="@string/setting"/>
+            android:theme="@style/Theme.New" />
         <activity android:name=".CurrentLocation" />
         <activity android:name=".Flashing" />
         <activity android:name=".SplashActivity">
@@ -35,18 +54,26 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <receiver android:name=".ScreenOnOffReceiver" >
+
+        <receiver android:name=".ScreenOnOffReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.SCREEN_OFF"></action>
-                <action android:name="android.intent.action.SCREEN_ON"></action>
-                <action android:name="number.action.string"></action>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="number.action.string" />
             </intent-filter>
         </receiver>
+
         <service
+            android:name=".ScreenOnOffBackgroundService"
             android:enabled="true"
-            android:exported="false"
-            android:name=".ScreenOnOffBackgroundService">
-        </service>
+            android:exported="false" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>

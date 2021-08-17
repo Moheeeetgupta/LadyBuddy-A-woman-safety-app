@@ -3,12 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/drawable-v24/buttonn.xml" value="0.20462962962962963" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/drawable/button.xml" value="0.2222222222222222" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20462962962962963" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/drawable/launchericon_laddybuddy_background.xml" value="0.20462962962962963" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/font/poppins_bold.xml" value="0.28" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_bathroom.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_bedroom.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_changing_room.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_choosen.xml" value="0.11676798378926039" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_current_location.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_flashing.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_instructions.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_magno_inst.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_news.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_outside.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_sms.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_splash.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/each_news_layout.xml" value="0.17300724637681159" />

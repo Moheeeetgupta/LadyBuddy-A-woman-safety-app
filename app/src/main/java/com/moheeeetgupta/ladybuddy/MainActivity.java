@@ -24,17 +24,17 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    CardView siren, location, Settings, currentlocation, community;
+    CardView siren, location, Settings, currentlocation, community, news;
 
-    RecyclerView recycleview;
-    Timer timer;
-    TimerTask timerTask;
-    int position;
-    LinearLayoutManager layoutManager;
+  //  RecyclerView recycleview;
+ //   Timer timer;
+ //   TimerTask timerTask;
+ //   int position;
+ //   LinearLayoutManager layoutManager;
 
 
-    ViewGroup progressView;
-    protected boolean isProgressShowing = false;
+ //   ViewGroup progressView;
+ //   protected boolean isProgressShowing = false;
 
 
     @Override
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         location = findViewById( R.id.send_Location );
         Settings = findViewById( R.id.Settings );
         currentlocation = findViewById( R.id.Currentlocation );
+        news = findViewById( R.id.News );
         // community=findViewById (R.id.community);
         siren.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -67,7 +68,13 @@ public class MainActivity extends AppCompatActivity {
         currentlocation.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity( new Intent( getApplicationContext(), CurrentLocation.class ) );
+                startActivity( new Intent( getApplicationContext(), ChoosenActivity.class ) );
+            }
+        } );
+        news.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent( getApplicationContext(), NewsActivity.class ) );
             }
         } );
         /*
@@ -80,10 +87,10 @@ public class MainActivity extends AppCompatActivity {
 
          */
        // showProgressingView();
-        getSuperHeroes();
+    //    getSuperHeroes();
       //  hideProgressingView();
     }
-
+/*
     private void getSuperHeroes() {
         showProgressingView();
 
@@ -218,6 +225,8 @@ public class MainActivity extends AppCompatActivity {
         isProgressShowing = false;
     }
 
+
+ */
 
 
 }
