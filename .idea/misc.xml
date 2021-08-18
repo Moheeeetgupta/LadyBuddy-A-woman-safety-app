@@ -25,10 +25,11 @@
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/progressbar_layout.xml" value="0.1598731884057971" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
         <entry key="..\:/Users/SAKSHI GUPTA/AndroidStudioProjects/LadyBuddy-A-woman-safety-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2111111111111111" />
+        <entry key="..\:/Users/SHIVANI/Downloads/LadyBuddy-A-woman-safety-app/app/src/main/res/layout/activity_magnetometer.xml" value="0.1743659420289855" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8 (4)" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_12" default="true" project-jdk-name="1.8 (4)" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
