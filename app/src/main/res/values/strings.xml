@@ -12,4 +12,6 @@
     <string name="setting">Settings</string>
     <string name="instruction">Instructions</string>
     <string name="news">News</string>
+    <string name="choose_buttons">Detect Spy</string>
+    <string name="instructions">Instructions</string>
 </resources>

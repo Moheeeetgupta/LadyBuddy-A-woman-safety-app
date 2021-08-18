@@ -42,7 +42,7 @@ public class NewsActivity extends AppCompatActivity {
 
         RetrofitClient.getApi().getsuperHeroes( "4662f45afce949fea09fbbbe7183eca6",
                 100,
-                "women"
+                "women AND india"
 
         ).enqueue( new Callback<NewsResults>() {
             @Override
