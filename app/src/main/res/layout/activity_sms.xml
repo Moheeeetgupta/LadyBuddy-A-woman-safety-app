@@ -30,6 +30,7 @@
                 android:id="@+id/textInputLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:theme="@style/EditTextThemeOverlay"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
@@ -42,11 +43,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:padding="1dp"
                     android:layout_marginRight="10dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter first phone number..."
                     android:inputType="phone"
+                    app:backgroundTint="@color/white"
+                    android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                     android:shadowColor="@android:color/white"
                     android:textColor="@android:color/white"
                     android:textColorHighlight="@android:color/white"
@@ -67,6 +69,7 @@
                 android:id="@+id/textInputLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:theme="@style/EditTextThemeOverlay"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
@@ -105,6 +108,7 @@
                 android:layout_height="match_parent"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
+                android:theme="@style/EditTextThemeOverlay"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -121,9 +125,7 @@
                     android:hint="Enter third phone number..."
                     android:inputType="phone"
                     android:textColor="@android:color/white"
-                    android:textColorHighlight="@android:color/white"
-                    android:textColorHint="@android:color/white"
-                    android:textColorLink="@android:color/white" />
+                    />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -138,6 +140,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout4"
                 android:layout_width="match_parent"
+                android:theme="@style/EditTextThemeOverlay"
                 android:layout_height="match_parent"
                 android:padding="8dp"
                 android:textColorHint="@android:color/white"
@@ -175,6 +178,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
+                android:theme="@style/EditTextThemeOverlay"
                 android:textColorHint="@android:color/white"
                 app:layout_constraintBottom_toTopOf="@+id/button"
                 app:layout_constraintEnd_toEndOf="parent"
