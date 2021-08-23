@@ -118,9 +118,6 @@ public class SmsActivity extends AppCompatActivity {
     }
 
 
-    private void requestionPermission() {
-        ActivityCompat.requestPermissions (SmsActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 1);
-    }
 
 
     public void btn_send(View view) {
@@ -128,19 +125,28 @@ public class SmsActivity extends AppCompatActivity {
     }
     public  void tryIt(){
         int permissionCheck = ContextCompat.checkSelfPermission (this, Manifest.permission.SEND_SMS);
-        if (permissionCheck == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission (SmsActivity.this,
-                Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            SendLocationMessage ();
+        if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
+            if ( ContextCompat.checkSelfPermission (SmsActivity.this,
+                    Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ) {
+                SendLocationMessage ();
+
+            } else {
+                ActivityCompat.requestPermissions (this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+            }
+
         } else {
             ActivityCompat.requestPermissions (this, new String[]{Manifest.permission.SEND_SMS}, 0);
-            ActivityCompat.requestPermissions (SmsActivity.this,
-                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
-
         }
 
-        //Calling function
+        if (ContextCompat.checkSelfPermission (SmsActivity.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+            makeCall();
+        } else {
+            ActivityCompat.requestPermissions (this, new String[]{Manifest.permission.CALL_PHONE}, 1);
+        }
 
-
+    }
+    //Calling function
+    private void makeCall() {
         Intent intent = new Intent (Intent.ACTION_CALL);
         String phoneNumber = txt_pnumber1.getText ().toString ();
         if (phoneNumber.trim ().isEmpty ()) {
@@ -150,21 +156,7 @@ public class SmsActivity extends AppCompatActivity {
 
             intent.setData (Uri.parse ("tel:" + phoneNumber));
         }
-        if (ActivityCompat.checkSelfPermission (getApplicationContext (), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            Toast.makeText (SmsActivity.this, "Please grant permission to make call...", Toast.LENGTH_SHORT).show ();
-            requestionPermission ();
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        } else {
-            startActivity (intent);
-        }
-        //calling function ends here
+        startActivity (intent);
     }
 
     private void SendLocationMessage() {
