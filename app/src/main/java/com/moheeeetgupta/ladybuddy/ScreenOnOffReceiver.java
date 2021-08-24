@@ -59,20 +59,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
             Log.d (SCREEN_TOGGLE_TAG, "Screen is turn on." + powerBtnTapCount);
         }
         if ((powerBtnTapCount % 4 == 0 ) && (powerBtnTapCount/4) % 2 == 1) {
-////            SmsActivity s=new SmsActivity ();
-////            s.tryIt ();
-//            // Get instance of Vibrator from current Context
-//            Vibrator v = (Vibrator) context.getSystemService (VIBRATOR_SERVICE);
-//
-//// Vibrate for 400 milliseconds
-//            v.vibrate(1000);
-//            //Getting intent and PendingIntent instance
-//            Intent pintent=new Intent(context.getApplicationContext (),ScreenOnOffReceiver.class);
-//            PendingIntent pi=PendingIntent.getActivity(context.getApplicationContext (), 0, pintent,0);
-//            //Get the SmsManager instance and call the sendTextMessage method to send message
-//            SmsManager sms= SmsManager.getDefault();
-//            sms.sendTextMessage("6299009237", null, "Hello ladybuddy", pi,null);
-//            sms.sendTextMessage("9304579433", null, "Hello ladybuddy", pi,null);
+
             //Getting the value of shared preference back
             fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient (context.getApplicationContext ());
 
@@ -99,32 +86,14 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
     public void tryIt(Context context) {
         SendLocationMessage (context);
-//         Get instance of Vibrator from current Context
-//        Vibrator v;
-//        v=(Vibrator)context.getSystemService(Context.VIBRATOR_SERVICE);
-//        // Vibrate for 500 milliseconds
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
-//        } else {
-//            //deprecated in API 26
-//            v.vibrate(500);
-//        }
-//
+
 
         //Calling function
-
-
         Intent intent = new Intent (Intent.ACTION_CALL);
         String phoneNumber = Value1;
         intent.setData (Uri.parse ("tel:" + phoneNumber));
         if (ActivityCompat.checkSelfPermission (context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             return;
         }
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -141,13 +110,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
     private void SendLocationMessage(final Context context) {
         if (ActivityCompat.checkSelfPermission (context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission (context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             return;
         }
         fusedLocationProviderClient.getLastLocation ().addOnCompleteListener (new OnCompleteListener<Location> () {
@@ -155,6 +118,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
             public void onComplete(@NonNull Task<Location> task) {
                 //Initialize Location
                 Location location = task.getResult ();
+                String Message = Value;
                 if (location != null) {
 
                     try {
@@ -164,44 +128,43 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
                         List<Address> addresses = geocoder.getFromLocation (
                                 location.getLatitude (), location.getLongitude (), 1
                         );
-                        String phoneNumber1 = Value1;
-                        String phoneNumber2 =Value2;
-                        String phoneNumber3 = Value3;
-                        String phoneNumber4 = Value4;
-                        String Message = Value;
-                        if (!Value1.equals ("") || !Value2.equals ("") || !Value3.equals ("") || !Value4.equals ("")) {
-                            if (!Value1.equals ("")) {
-                                SmsManager smsManager = SmsManager.getDefault ();
-                                smsManager.sendTextMessage (phoneNumber1, null, Message + "I am at " + addresses.get (0).getLatitude () +
-                                        "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
-                                        "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0), null, null);
-                            }
+                        Message=Message + "I am at " + addresses.get (0).getLatitude () +
+                                "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
+                                "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0);
 
-                            if (!Value2.equals ("")) {
-                                SmsManager smsManager = SmsManager.getDefault ();
-                                smsManager.sendTextMessage (phoneNumber2, null, Message + "I am at " + addresses.get (0).getLatitude () +
-                                        "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
-                                        "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0), null, null);
-                            }
-
-                            if (!Value3.equals ("")) {
-                                SmsManager smsManager = SmsManager.getDefault ();
-                                smsManager.sendTextMessage (phoneNumber3, null, Message + "I am at " + addresses.get (0).getLatitude () +
-                                        "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
-                                        "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0), null, null);
-                            }
-                            if (!Value4.equals ("")) {
-                                SmsManager smsManager = SmsManager.getDefault ();
-                                smsManager.sendTextMessage (phoneNumber4, null, Message + "I am at " + addresses.get (0).getLatitude () +
-                                        "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
-                                        "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0), null, null);
-                            }
-                        }
 
                     } catch (IOException e) {
                         e.printStackTrace ();
                     }
 
+                }else{
+                    Message =Message + "Software was not able to retrieve live location due to some internal errors..";
+
+                }
+                String phoneNumber1 = Value1;
+                String phoneNumber2 =Value2;
+                String phoneNumber3 = Value3;
+                String phoneNumber4 = Value4;
+
+                if (!Value1.equals ("") || !Value2.equals ("") || !Value3.equals ("") || !Value4.equals ("")) {
+                    if (!Value1.equals ("")) {
+                        SmsManager smsManager = SmsManager.getDefault ();
+                        smsManager.sendTextMessage (phoneNumber1, null,Message , null, null);
+                    }
+
+                    if (!Value2.equals ("")) {
+                        SmsManager smsManager = SmsManager.getDefault ();
+                        smsManager.sendTextMessage (phoneNumber2, null, Message, null, null);
+                    }
+
+                    if (!Value3.equals ("")) {
+                        SmsManager smsManager = SmsManager.getDefault ();
+                        smsManager.sendTextMessage (phoneNumber3, null, Message, null, null);
+                    }
+                    if (!Value4.equals ("")) {
+                        SmsManager smsManager = SmsManager.getDefault ();
+                        smsManager.sendTextMessage (phoneNumber4, null, Message, null, null);
+                    }
                 }
             }
         });

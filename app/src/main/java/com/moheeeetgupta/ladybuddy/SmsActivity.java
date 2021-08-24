@@ -12,6 +12,7 @@ import android.location.Location;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Message;
 import android.os.Vibrator;
 import android.telephony.SmsManager;
 import android.view.View;
@@ -177,6 +178,7 @@ public class SmsActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Location> task) {
                 //Initialize Location
                 Location location = task.getResult ();
+                String Message = txt_msg.getText ().toString ().trim ();
                 if (location != null) {
 
                     try {
@@ -186,51 +188,51 @@ public class SmsActivity extends AppCompatActivity {
                         List<Address> addresses = geocoder.getFromLocation (
                                 location.getLatitude (), location.getLongitude (), 1
                         );
-                        String phoneNumber1 = txt_pnumber1.getText ().toString ().trim ();
-                        String phoneNumber2 = txt_pnumber2.getText ().toString ().trim ();
-                        String phoneNumber3 = txt_pnumber3.getText ().toString ().trim ();
-                        String phoneNumber4 = txt_pnumber4.getText ().toString ().trim ();
-                        String Message = txt_msg.getText ().toString ().trim ();
-                        if (!txt_pnumber1.getText ().toString ().equals ("") || !txt_pnumber2.getText ().toString ().equals ("") || !txt_pnumber3.getText ().toString ().equals ("") || !txt_pnumber4.getText ().toString ().equals ("")) {
-                            if (!txt_pnumber1.getText ().toString ().equals ("")) {
-                                SmsManager smsManager = SmsManager.getDefault ();
-                                smsManager.sendTextMessage (phoneNumber1, null, Message + "I am at " + addresses.get (0).getLatitude () +
-                                        "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
-                                        "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0), null, null);
-                                Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();
-                            }
-
-                            if (!txt_pnumber2.getText ().toString ().equals ("")) {
-                                SmsManager smsManager = SmsManager.getDefault ();
-                                smsManager.sendTextMessage (phoneNumber2, null, Message + "I am at " + addresses.get (0).getLatitude () +
-                                        "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
-                                        "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0), null, null);
-                                Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();
-                            }
-
-                            if (!txt_pnumber3.getText ().toString ().equals ("")) {
-                                SmsManager smsManager = SmsManager.getDefault ();
-                                smsManager.sendTextMessage (phoneNumber3, null, Message + "I am at " + addresses.get (0).getLatitude () +
-                                        "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
-                                        "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0), null, null);
-                                Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();
-                            }
-                            if (!txt_pnumber4.getText ().toString ().equals ("")) {
-                                SmsManager smsManager = SmsManager.getDefault ();
-                                smsManager.sendTextMessage (phoneNumber4, null, Message + "I am at " + addresses.get (0).getLatitude () +
-                                        "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
-                                        "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0), null, null);
-                                Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();
-                            }
-                        } else {
-                            Toast.makeText (SmsActivity.this, "Please give the phone number first...", Toast.LENGTH_SHORT).show ();
-                        }
+                        Message += "I am at " + addresses.get (0).getLatitude () +
+                                "," + addresses.get (0).getLongitude () + ", " + addresses.get (0).getCountryName () +
+                                "," + addresses.get (0).getLocality () + ", " + addresses.get (0).getAddressLine (0);
 
                     } catch (IOException e) {
                         e.printStackTrace ();
                     }
 
+
+                }else{
+                    String str="Software was not able to retrieve live location due to some internal errors..";
+                    Message += str;
                 }
+                String phoneNumber1 = txt_pnumber1.getText ().toString ().trim ();
+                String phoneNumber2 = txt_pnumber2.getText ().toString ().trim ();
+                String phoneNumber3 = txt_pnumber3.getText ().toString ().trim ();
+                String phoneNumber4 = txt_pnumber4.getText ().toString ().trim ();
+
+                if (!txt_pnumber1.getText ().toString ().equals ("") || !txt_pnumber2.getText ().toString ().equals ("") || !txt_pnumber3.getText ().toString ().equals ("") || !txt_pnumber4.getText ().toString ().equals ("")) {
+                    if (!txt_pnumber1.getText ().toString ().equals ("")) {
+                        SmsManager smsManager = SmsManager.getDefault ();
+                        smsManager.sendTextMessage (phoneNumber1, null,Message , null, null);
+                        Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();
+                    }
+
+                    if (!txt_pnumber2.getText ().toString ().equals ("")) {
+                        SmsManager smsManager = SmsManager.getDefault ();
+                        smsManager.sendTextMessage (phoneNumber2, null, Message, null, null);
+                        Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();
+                    }
+
+                    if (!txt_pnumber3.getText ().toString ().equals ("")) {
+                        SmsManager smsManager = SmsManager.getDefault ();
+                        smsManager.sendTextMessage (phoneNumber3, null, Message, null, null);
+                        Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();
+                    }
+                    if (!txt_pnumber4.getText ().toString ().equals ("")) {
+                        SmsManager smsManager = SmsManager.getDefault ();
+                        smsManager.sendTextMessage (phoneNumber4, null, Message, null, null);
+                        Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();
+                    }
+                } else {
+                    Toast.makeText (SmsActivity.this, "Please give the phone number first...", Toast.LENGTH_SHORT).show ();
+                }
+
             }
         });
     }
