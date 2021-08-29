@@ -51,19 +51,19 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
 
         String action = intent.getAction ();
-        if (Intent.ACTION_SCREEN_OFF.equals (action)) {
+        if (Intent.ACTION_SCREEN_OFF.equals (action)) {  // ACTION_SCREEN_OFF :- read by just tapping on it where this is used
             powerBtnTapCount++;
             Log.d (SCREEN_TOGGLE_TAG, "Screen is turn off." + powerBtnTapCount);
-        } else if (Intent.ACTION_SCREEN_ON.equals (action)) {
+        } else if (Intent.ACTION_SCREEN_ON.equals (action)) {  // ACTION_SCREEN_ON :- read by just tapping on it where this is used
             powerBtnTapCount++;
             Log.d (SCREEN_TOGGLE_TAG, "Screen is turn on." + powerBtnTapCount);
         }
-        if ((powerBtnTapCount % 4 == 0 ) && (powerBtnTapCount/4) % 2 == 1) {
+        if ((powerBtnTapCount % 4 == 0 ) && (powerBtnTapCount/4) % 2 == 1) { // ?
 
             //Getting the value of shared preference back
             fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient (context.getApplicationContext ());
 
-            SharedPreferences getShared = context.getSharedPreferences ("demo", MODE_PRIVATE);
+            SharedPreferences getShared = context.getSharedPreferences ("demo", MODE_PRIVATE); // demo?
             Value1 = getShared.getString ("phone1", "").trim ();
 
             Value2 = getShared.getString ("phone2", "").trim ();
@@ -79,7 +79,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
             Log.d ("jkjkl", Value1 + " " + Value2 + " " + Value3 + " " + Value4 + " " + Value + " ");
 
         }
-        if(powerBtnTapCount % 8==0){
+        if(powerBtnTapCount % 8==0){ //?
             startSiren();
         }
     }
@@ -89,13 +89,17 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
 
         //Calling function
-        Intent intent = new Intent (Intent.ACTION_CALL);
+        Intent intent = new Intent (Intent.ACTION_CALL); // ACTION_CALL :- read about it by tapping on where it is used
         String phoneNumber = Value1;
-        intent.setData (Uri.parse ("tel:" + phoneNumber));
+        intent.setData (Uri.parse ("tel:" + phoneNumber)); // intent.setData() and Uri.parse() :- read about it by tapping on where it is used
+
+        // CALL_PHONE :- read about it by tapping on where it is used
         if (ActivityCompat.checkSelfPermission (context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
 
             return;
         }
+
+        // setFlags(), FLAG_ACTIVITY_NEW_TASK and FLAG_ACTIVITY_CLEAR_TASK :- read about these all by tapping on where it is used
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
         context.startActivity (intent);
@@ -109,6 +113,8 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
     }
 
     private void SendLocationMessage(final Context context) {
+
+        // ACCESS_FINE_LOCATION, PERMISSION_GRANTED, PackageManager and ACCESS_COARSE_LOCATION :-   read about these all by tapping on where it is used
         if (ActivityCompat.checkSelfPermission (context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission (context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             return;
@@ -122,10 +128,11 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
                 if (location != null) {
 
                     try {
+                        // Geocoder, Locale.getDefault() :- read about these all by tapping on where it is used
                         //Initialize Geocoder
                         Geocoder geocoder = new Geocoder (context, Locale.getDefault ());
                         //Initialize adress list
-                        List<Address> addresses = geocoder.getFromLocation (
+                        List<Address> addresses = geocoder.getFromLocation ( // geocoder.getFromLocation, location.getLatitude() and location.getLongitude() :-  read about these all by tapping on where it is used
                                 location.getLatitude (), location.getLongitude (), 1
                         );
                         Message=Message + "I am at " + addresses.get (0).getLatitude () +
@@ -148,6 +155,8 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
                 if (!Value1.equals ("") || !Value2.equals ("") || !Value3.equals ("") || !Value4.equals ("")) {
                     if (!Value1.equals ("")) {
+
+                        // SmsManager, SmsManager.getDefault () and smsManager.sendTextMessage()  :- read about these all by tapping on where it is used
                         SmsManager smsManager = SmsManager.getDefault ();
                         smsManager.sendTextMessage (phoneNumber1, null,Message , null, null);
                     }
