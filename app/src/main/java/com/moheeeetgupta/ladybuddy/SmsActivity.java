@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.os.Message;
 import android.os.Vibrator;
 import android.telephony.SmsManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -314,4 +316,29 @@ public class SmsActivity extends AppCompatActivity {
             // internet lost alert dialog method call from here...
         }
     };
+    @Override
+    // main menu means logout button has created in actionbar.
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.instructions_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    // for performing logout operation when logout menu button in actionbar has tapped.
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.action_instructions:
+                startActivity( new Intent( getApplicationContext(), SosInsructionsActivity.class ) );
+                return true;
+                default:
+                return false;
+
+
+        }
+
+    }
+
 }

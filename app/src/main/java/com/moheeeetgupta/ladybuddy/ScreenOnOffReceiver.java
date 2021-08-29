@@ -15,6 +15,7 @@ import android.location.Location;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
+import android.os.CountDownTimer;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.telephony.SmsManager;
@@ -44,22 +45,68 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
     public final static String SCREEN_TOGGLE_TAG = "SCREEN_TOGGLE_TAG";
     private int powerBtnTapCount = 0;
     FusedLocationProviderClient fusedLocationProviderClient;
-    String Value1, Value2, Value3, Value4, Value;
 
+    String Value1, Value2, Value3, Value4, Value;
+    int timer=0;
+    // Time is in millisecond so 50sec = 50000 I have used
+    // countdown Interveal is 1sec = 1000 I have used
+    public CountDownTimer countDownTimer=new CountDownTimer (60000, 1000) {
+        @Override
+        public void onTick(long millisUntilFinished) {
+            timer++;
+            Log.d (SCREEN_TOGGLE_TAG, "time"+timer);
+
+        }
+
+        @Override
+        public void onFinish() {
+            timer=90;
+        }
+    };
     @Override
     public void onReceive(Context context, Intent intent) {
-
-
         String action = intent.getAction ();
-        if (Intent.ACTION_SCREEN_OFF.equals (action)) {  // ACTION_SCREEN_OFF :- read by just tapping on it where this is used
-            powerBtnTapCount++;
-            Log.d (SCREEN_TOGGLE_TAG, "Screen is turn off." + powerBtnTapCount);
-        } else if (Intent.ACTION_SCREEN_ON.equals (action)) {  // ACTION_SCREEN_ON :- read by just tapping on it where this is used
-            powerBtnTapCount++;
-            Log.d (SCREEN_TOGGLE_TAG, "Screen is turn on." + powerBtnTapCount);
-        }
-        if ((powerBtnTapCount % 4 == 0 ) && (powerBtnTapCount/4) % 2 == 1) { // ?
+        if((Intent.ACTION_SCREEN_OFF.equals (action)||Intent.ACTION_SCREEN_ON.equals (action))&&powerBtnTapCount==0){
 
+            powerBtnTapCount++;
+            countDownTimer.start ();
+            Log.d (SCREEN_TOGGLE_TAG, "Power button tapped in timer "+timer+"  "+ powerBtnTapCount);
+
+
+        }else
+        if(powerBtnTapCount>0) {
+           if(timer<90) {
+               if (Intent.ACTION_SCREEN_OFF.equals (action) || Intent.ACTION_SCREEN_ON.equals (action)) {  // ACTION_SCREEN_OFF :- read by just tapping on it where this is used
+                   powerBtnTapCount++;
+                   Log.d (SCREEN_TOGGLE_TAG, "Power button tapped in timer "+timer+"  "+ powerBtnTapCount);
+               }
+           }else{
+               powerBtnTapCount=0;
+               if (Intent.ACTION_SCREEN_OFF.equals (action) || Intent.ACTION_SCREEN_ON.equals (action)) {  // ACTION_SCREEN_OFF :- read by just tapping on it where this is used
+                   powerBtnTapCount++;
+                   countDownTimer.start ();
+                   Log.d (SCREEN_TOGGLE_TAG, "Power button tapped in timer "+timer+"  "+ powerBtnTapCount);
+
+               }
+
+           }
+
+        }
+        if(mediaPlayer==null) {
+            mediaPlayer = MediaPlayer.create (context.getApplicationContext (), R.raw.police_siren);
+        }
+        if(powerBtnTapCount ==6){ //?
+            mediaPlayer.start ();
+            mediaPlayer.setLooping (true);
+            powerBtnTapCount=0;
+            countDownTimer.cancel ();
+            timer=0;
+        }
+        if (powerBtnTapCount ==3) { // ?
+            if(mediaPlayer.isPlaying ()){
+                mediaPlayer.setLooping (false);
+                mediaPlayer=null;
+            }
             //Getting the value of shared preference back
             fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient (context.getApplicationContext ());
 
@@ -79,9 +126,9 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
             Log.d ("jkjkl", Value1 + " " + Value2 + " " + Value3 + " " + Value4 + " " + Value + " ");
 
         }
-        if(powerBtnTapCount % 8==0){ //?
-            startSiren();
-        }
+
+
+
     }
 
     public void tryIt(Context context) {
@@ -106,11 +153,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
     }
 
-    public  void startSiren(){
-        mediaPlayer = MediaPlayer.create (fusedLocationProviderClient.getApplicationContext (), R.raw.police_siren);
-        mediaPlayer.start ();
-        mediaPlayer.setLooping (true);
-    }
+
 
     private void SendLocationMessage(final Context context) {
 

@@ -159,7 +159,7 @@ public class Magnetometer extends AppCompatActivity implements SensorEventListen
                 mediaPlayer=null;
                 mediaPlayer = MediaPlayer.create(this, R.raw.beepd);
                 mediaPlayer.start();
-                show_conditions.setText( "Finally electronic device detected." );
+                show_conditions.setText( "Finally electronic device detected" );
 
             }else {
                 mediaPlayer = null;

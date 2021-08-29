@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SosInsructionsActivity"
+            android:exported="true" />
+        <activity
             android:name=".Magnetometer"
             android:exported="true" />
         <activity

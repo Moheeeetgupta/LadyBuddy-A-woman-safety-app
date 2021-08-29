@@ -47,13 +47,14 @@
                     android:background="@android:color/transparent"
                     android:hint="Enter first phone number..."
                     android:inputType="phone"
-                    app:backgroundTint="@color/white"
-                    android:textCursorDrawable="@drawable/custom_edit_text_cursor"
                     android:shadowColor="@android:color/white"
                     android:textColor="@android:color/white"
                     android:textColorHighlight="@android:color/white"
                     android:textColorHint="@android:color/white"
-                    android:textColorLink="@android:color/white" />
+                    android:textColorLink="@android:color/white"
+                    android:textCursorDrawable="@drawable/custom_edit_text_cursor"
+                    app:backgroundTint="@color/white"
+                    tools:ignore="TouchTargetSizeCheck" />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -213,6 +214,7 @@
         android:layout_marginRight="103dp"
         android:layout_marginBottom="118dp"
         android:background="@drawable/button"
+        android:clickable="true"
         android:onClick="btn_send"
         android:text="Try it!"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
@@ -228,6 +230,7 @@
         android:layout_marginLeft="103dp"
         android:layout_marginBottom="118dp"
         android:background="@drawable/button"
+        android:clickable="true"
         android:text="Save "
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         app:layout_constraintBottom_toBottomOf="parent"
