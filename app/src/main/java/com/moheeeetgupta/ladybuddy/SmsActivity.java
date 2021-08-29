@@ -40,7 +40,19 @@ public class SmsActivity extends AppCompatActivity {
     TextInputEditText txt_pnumber1, txt_msg, txt_pnumber2, txt_pnumber3, txt_pnumber4;
     Button Save;
 
+    /**
+     * LocationManager :- This class provides access to the system location services.
+     * These services allow applications to obtain periodic updates of the device's geographical location,
+     * or to be notified when the device enters the proximity of a given geographical location.
+     */
 
+    /**
+     * FusedLocationProvider :- The fused location provider is one of the location APIs in Google Play services.
+     * It manages the underlying location technology and provides a simple API so that you can specify
+     * requirements at a high level, like high accuracy or low power.
+     * It also optimizes the device's use of battery power.
+     * The fused location provider  is used specifically to retrieve the device's last known location
+     */
 
     FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -58,6 +70,7 @@ public class SmsActivity extends AppCompatActivity {
         txt_pnumber4 = findViewById (R.id.txt_phone_number4);
         Save = findViewById (R.id.Save_btn);
 
+        // link :- https://google-developer-training.github.io/android-developer-advanced-course-concepts/unit-4-add-geo-features-to-your-apps/lesson-7-location/7-1-c-location-services/7-1-c-location-services.html
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient (this);
 
 
@@ -76,6 +89,14 @@ public class SmsActivity extends AppCompatActivity {
                 String phone4 = txt_pnumber4.getText ().toString ();
                 String msg = txt_msg.getText ().toString ();
 
+                /**
+                 * SharedPreferences.Editor :- Interface used for modifying values in a SharedPreferences object.
+                 * All changes you make in an editor are batched, and not copied back to the original SharedPreferences
+                 * until you call commit() or apply().
+                 *
+                 * To write to a shared preferences file, SharedPreferences.Editor is created by calling edit() on the
+                 * SharedPreferences.
+                 */
                 SharedPreferences shrd = getSharedPreferences ("demo", MODE_PRIVATE);
                 SharedPreferences.Editor editor = shrd.edit ();
                 editor.putString ("phone1", phone1);
@@ -101,6 +122,23 @@ public class SmsActivity extends AppCompatActivity {
 
             }
         });
+
+        /**
+         * SharedPreferences :- Android provides many ways of storing data of an application, one of the way is called as shared preference.
+         * SharedPreferences object help you save simple application data as a name/value pairs - you specify a name for the data you want to save,
+         * and then both it and its value will be saved automatically to an XML file for you. when you will close the application and then open it again then,
+         * you will find these values as it was before closing the app , means they will be retrived.
+         *
+         * link :- https://www.geeksforgeeks.org/shared-preferences-in-android-with-examples/
+         * link :- https://www.youtube.com/watch?v=LHaxq3YdxZU&t=1s
+         */
+
+        /**
+         * getSharedPreferences() :- Shared Preferences allow you to save and retrieve data in the form of key,value pair.
+         * In order to use shared preferences, you have to call a method getSharedPreferences() that returns a SharedPreference
+         * instance pointing to the file that contains the values of preferences.
+         */
+
         //Getting the value of shared preference back
         SharedPreferences getShared = getSharedPreferences ("demo", MODE_PRIVATE);
         String Value1 = getShared.getString ("phone1", "");
@@ -132,6 +170,12 @@ public class SmsActivity extends AppCompatActivity {
                 SendLocationMessage ();
 
             } else {
+
+                /**
+                 * ActivityCompat :- public interface ActivityCompat. A helper for accessing features in Activity in a backwards
+                 * compatible fashion. Construct this by using getActivityCompat(Activity) .
+                 * This helper augments the included methods with data on instant apps.
+                 */
                 ActivityCompat.requestPermissions (this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
             }
 
@@ -139,6 +183,11 @@ public class SmsActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions (this, new String[]{Manifest.permission.SEND_SMS}, 0);
         }
 
+        /**
+         * ContextCompat :- It is a class for replacing some work with base context.
+         * For example if you used before something like getContext().getColor(R.color.black);
+         * Now its deprecated since android 6.0 (API 22+) so you should use: getContext().getColor(R.color.black,theme);
+         */
         if (ContextCompat.checkSelfPermission (SmsActivity.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
             makeCall();
         } else {
@@ -182,9 +231,10 @@ public class SmsActivity extends AppCompatActivity {
                 if (location != null) {
 
                     try {
+                        // Read about Geocoder by just tapping on where it is written
                         //Initialize Geocoder
                         Geocoder geocoder = new Geocoder (SmsActivity.this, Locale.getDefault ());
-                        //Initialize adress list
+                        //Initialize address list
                         List<Address> addresses = geocoder.getFromLocation (
                                 location.getLatitude (), location.getLongitude (), 1
                         );
@@ -208,6 +258,9 @@ public class SmsActivity extends AppCompatActivity {
 
                 if (!txt_pnumber1.getText ().toString ().equals ("") || !txt_pnumber2.getText ().toString ().equals ("") || !txt_pnumber3.getText ().toString ().equals ("") || !txt_pnumber4.getText ().toString ().equals ("")) {
                     if (!txt_pnumber1.getText ().toString ().equals ("")) {
+
+                        // SmsManager :- Manages SMS operations such as sending data, text, and pdu SMS messages.
+                        // Get this object by calling the static method getDefault().
                         SmsManager smsManager = SmsManager.getDefault ();
                         smsManager.sendTextMessage (phoneNumber1, null,Message , null, null);
                         Toast.makeText (SmsActivity.this, "Message sent...", Toast.LENGTH_SHORT).show ();

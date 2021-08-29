@@ -36,6 +36,7 @@ public class SpeedometerView extends View {
 
     private List<ColoredRange> ranges = new ArrayList<ColoredRange>();
 
+    // Paint :- The Paint class holds the style and color information about how to draw geometries, text and bitmaps.
     private Paint backgroundPaint;
     private Paint backgroundInnerPaint;
     private Paint maskPaint;
@@ -44,6 +45,12 @@ public class SpeedometerView extends View {
     private Paint txtPaint;
     private Paint colorLinePaint;
 
+    /**
+     * Bitmap :- Everything that is drawn in android is a Bitmap .
+     * We can create a Bitmap instance , either by using the Bitmap class which has methods that allow us to
+     * manipulate pixels in the 2d coordinate system , or we can can create a Bitmap from an image or a file or
+     * a resource by using the BitmapFactory class.
+     */
     private Bitmap mMask;
 
     public SpeedometerView(Context context) {
@@ -54,6 +61,14 @@ public class SpeedometerView extends View {
     public SpeedometerView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
+        /**
+         * TypedArray :- Container for an array of values that were retrieved with
+         * Resources.Theme#obtainStyledAttributes(AttributeSet, int[], int, int) or
+         * Resources#obtainAttributes. Be sure to call recycle() when done with them.
+         * The indices used to retrieve values from this structure correspond to the positions of the attributes given
+         * to obtainStyledAttributes.
+         */
+        // obtainStyledAttributes :- read by taping on it where it is used.
         TypedArray attributes = context.getTheme().obtainStyledAttributes(
                 attrs,
                 R.styleable.SpeedometerView,
@@ -64,7 +79,7 @@ public class SpeedometerView extends View {
             setMaxSpeed(attributes.getFloat(R.styleable.SpeedometerView_maxSpeed, (float) DEFAULT_MAX_SPEED));
             setSpeed(attributes.getFloat(R.styleable.SpeedometerView_speed, 0));
         } finally {
-            attributes.recycle();
+            attributes.recycle(); // recycle() :- read by taping on it where it is used.
         }
         init();
     }
@@ -77,7 +92,7 @@ public class SpeedometerView extends View {
         if (maxSpeed <= 0)
             throw new IllegalArgumentException("Non-positive value specified as max speed.");
         this.maxSpeed = maxSpeed;
-        invalidate();
+        invalidate(); // invalidate() :- read by taping on it where it is used.
     }
 
     public double getSpeed() {
@@ -94,6 +109,7 @@ public class SpeedometerView extends View {
     }
 
     @TargetApi(11)
+    // ValueAnimator :- read about it by just tapping on it where it is used
     public ValueAnimator setSpeed(double progress, long duration, long startDelay) {
         if (progress <= 0)
             throw new IllegalArgumentException("Non-positive value specified as a speed.");
@@ -101,16 +117,16 @@ public class SpeedometerView extends View {
         if (progress > maxSpeed)
             progress = maxSpeed;
 
-        ValueAnimator va = ValueAnimator.ofObject(new TypeEvaluator<Double>() {
+        ValueAnimator va = ValueAnimator.ofObject(new TypeEvaluator<Double>() {  // read about ValueAnimator.ofObject by just tapping on it
             @Override
             public Double evaluate(float fraction, Double startValue, Double endValue) {
                 return startValue + fraction*(endValue-startValue);
             }
         }, Double.valueOf(getSpeed()), Double.valueOf(progress));
 
-        va.setDuration(duration);
-        va.setStartDelay(startDelay);
-        va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        va.setDuration(duration); // setDuration() :- read by just tapping on where this is used
+        va.setStartDelay(startDelay); // setStartDelay() :- read by just tapping on where this is used
+        va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // addUpdateListener() :- read by just tapping on where this is used
             public void onAnimationUpdate(ValueAnimator animation) {
                 Double value = (Double) animation.getAnimatedValue();
                 if (value != null)
@@ -118,7 +134,7 @@ public class SpeedometerView extends View {
                 Log.d(TAG, "setSpeed(): onAnumationUpdate() -> value = " + value);
             }
         });
-        va.start();
+        va.start(); // start() :- read by just tapping on where this is used
         return va;
     }
 
@@ -166,7 +182,7 @@ public class SpeedometerView extends View {
     }
 
     public void clearColoredRanges() {
-        ranges.clear();
+        ranges.clear(); // clear() :-  read by just tapping on where this is used
         invalidate();
     }
 
@@ -182,11 +198,11 @@ public class SpeedometerView extends View {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) { // read about Canvas by just tapping on it where it is used
         super.onDraw(canvas);
 
         // Clear canvas
-        canvas.drawColor(Color.TRANSPARENT);
+        canvas.drawColor(Color.TRANSPARENT); // read about canvas.drawColor() by just tapping on it where it is used
 
         // Draw Metallic Arc and background
         drawBackground(canvas);
@@ -200,7 +216,7 @@ public class SpeedometerView extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec); //  MeasureSpec and getMode() :-  read by just tapping on where this is used
         int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
@@ -208,6 +224,7 @@ public class SpeedometerView extends View {
         int width;
         int height;
 
+        // EXACTLY and AT_MOST :- read by just tapping on where this is used
         //Measure Width
         if (widthMode == MeasureSpec.EXACTLY || widthMode == MeasureSpec.AT_MOST) {
             //Must be this size
@@ -237,24 +254,24 @@ public class SpeedometerView extends View {
         }
 
         //MUST CALL THIS
-        setMeasuredDimension(width, height);
+        setMeasuredDimension(width, height); // setMeasuredDimension() :- read by just tapping on where this is used
     }
 
     private void drawNeedle(Canvas canvas) {
-        RectF oval = getOval(canvas, 1);
+        RectF oval = getOval(canvas, 1); // read about RectF by tapping on it.
         float radius = oval.width()*0.35f;
 
         float angle = 10 + (float) (getSpeed()/ getMaxSpeed()*160);
-        canvas.drawLine(
+        canvas.drawLine( // drawLine() :- read by just tapping on where this is used
                 (float) (oval.centerX() + 0),
                 (float) (oval.centerY() - 0),
                 (float) (oval.centerX() + Math.cos((180 - angle) / 180 * Math.PI) * (radius)),
                 (float) (oval.centerY() - Math.sin(angle / 180 * Math.PI) * (radius)),
                 needlePaint
-        );
+        ); // read about canvas.drawLine just tapping on it
 
         RectF smallOval = getOval(canvas, 0.2f);
-        canvas.drawArc(smallOval, 180, 180, true, backgroundPaint);
+        canvas.drawArc(smallOval, 180, 180, true, backgroundPaint); // read about canvas.drawArc by tapping on it
     }
 
     private void drawTicks(Canvas canvas) {
@@ -301,6 +318,7 @@ public class SpeedometerView extends View {
                 float txtX = oval.centerX() + radius + majorTicksLength/2 + 8;
                 float txtY = oval.centerY();
                 canvas.rotate(+90, txtX, txtY);
+                // read about canvas.drawText()
                 canvas.drawText(labelConverter.getLabelFor(curProgress, maxSpeed), txtX, txtY, txtPaint);
                 canvas.restore();
             }
@@ -330,6 +348,7 @@ public class SpeedometerView extends View {
             oval = new RectF(0, 0, canvasHeight*2*factor, canvasHeight*2*factor);
         }
 
+        // read about oval.offset() by tapping on where it is used
         oval.offset((canvasWidth-oval.width())/2 + getPaddingLeft(), (canvasHeight*2-oval.height())/2 + getPaddingTop());
 
         return oval;
@@ -354,6 +373,7 @@ public class SpeedometerView extends View {
         RectF innerOval = getOval(canvas, 0.9f);
         canvas.drawArc(innerOval, 180, 180, true, backgroundInnerPaint);
 
+        //read about Bitmap.createScaledBitmap() by tapping on it
         Bitmap mask = Bitmap.createScaledBitmap(mMask, (int)(oval.width()*1.1), (int)(oval.height()*1.1)/2, true);
         canvas.drawBitmap(mask, oval.centerX() - oval.width()*1.1f/2, oval.centerY()-oval.width()*1.1f/2, maskPaint);
     }
@@ -381,7 +401,7 @@ public class SpeedometerView extends View {
         mMask = Bitmap.createBitmap(mMask, 0, 0, mMask.getWidth(), mMask.getHeight()/2);
 
         maskPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        maskPaint.setDither(true);
+        maskPaint.setDither(true); // read by just tapping on where this is used
 
         ticksPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         ticksPaint.setStrokeWidth(3.0f);
@@ -390,7 +410,7 @@ public class SpeedometerView extends View {
 
         colorLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         colorLinePaint.setStyle(Paint.Style.STROKE);
-        colorLinePaint.setStrokeWidth(5);
+        colorLinePaint.setStrokeWidth(5); // read by just tapping on where this is used
         colorLinePaint.setColor(defaultColor);
 
         needlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);

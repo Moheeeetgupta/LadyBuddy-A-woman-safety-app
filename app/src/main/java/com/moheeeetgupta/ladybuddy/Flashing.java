@@ -27,11 +27,12 @@ public class Flashing extends AppCompatActivity {
         mediaPlayer.start ();
         mediaPlayer.setLooping (true);
     }
+    // @SuppressLint :- android.annotation.SuppressLint. Indicates that Lint should ignore the specified warnings for the annotated element
     @SuppressLint("WrongConstant")
     public void startLights(){
         ObjectAnimator anim= ObjectAnimator.ofInt (imageviewflashing,"BackgroundColor", Color.RED,Color.BLUE);
         anim.setDuration (120);
-        anim.setEvaluator (new ArgbEvaluator ());
+        anim.setEvaluator (new ArgbEvaluator ()); // read by tapping on it
         anim.setRepeatMode (Animation.REVERSE);
         anim.setRepeatCount (Animation.INFINITE);
         anim.start ();
