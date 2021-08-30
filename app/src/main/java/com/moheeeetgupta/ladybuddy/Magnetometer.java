@@ -1,6 +1,7 @@
 package com.moheeeetgupta.ladybuddy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.hardware.Sensor;
@@ -19,6 +20,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static java.lang.Math.sqrt;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -85,7 +88,14 @@ public class Magnetometer extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_magnetometer);
 
+        FloatingActionButton floatingActionButton=findViewById (R.id.magnetoInst);
+        floatingActionButton.setOnClickListener (new View.OnClickListener () {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent ( getApplicationContext(), MagBtnInst.class ) );
 
+            }
+        });
         Speed = (SpeedometerView)findViewById(R.id.speedometer);
         Speed.setLabelConverter(new SpeedometerView.LabelConverter() {
             @Override
