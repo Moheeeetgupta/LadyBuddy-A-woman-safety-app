@@ -47,7 +47,7 @@ public class Magnetometer extends AppCompatActivity implements SensorEventListen
     Boolean flag = false;
     double prevx = 0f;
 
-    String prevStarted = "yesMagneto";
+    String prevStarted = "yesMagnet";
     @Override
     protected void onResume() {
         super.onResume();
