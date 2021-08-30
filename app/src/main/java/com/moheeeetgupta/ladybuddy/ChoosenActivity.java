@@ -29,7 +29,7 @@ public class ChoosenActivity extends AppCompatActivity {
 
             Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
             TextView textView=mView.findViewById (R.id.textFormodal);
-            textView.setText ("Detecting spy cameras which emit IR rays is mostly known.You can simply use night vision of your phone camera to detect blinking IR rays.But these days very high tech spy cameras are present in the market which do not emit IR rays,so our magnetometer sensor simulation helps you detect those spy cameras very esily..");
+            textView.setText ("Detecting spy cameras which emit IR rays is mostly known.You can simply use night vision of your phone camera to detect blinking IR rays. But these days very high tech spy cameras are present in the market which do not emit IR rays, so our magnetometer sensor simulation helps you detect those spy cameras very easily..");
             alert.setView(mView);
             final AlertDialog alertDialog = alert.create();
             alertDialog.setCanceledOnTouchOutside(false);
