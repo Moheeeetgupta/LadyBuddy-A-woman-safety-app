@@ -1,6 +1,7 @@
 package com.moheeeetgupta.ladybuddy;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -9,9 +10,12 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import static java.lang.Math.sqrt;
@@ -42,6 +46,35 @@ public class Magnetometer extends AppCompatActivity implements SensorEventListen
     private SensorManager sensorManager; // read about SensorManger just by ttapping on where it is used.
     Boolean flag = false;
     double prevx = 0f;
+
+    String prevStarted = "yesMagneto";
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedpreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+        if (!sharedpreferences.getBoolean(prevStarted, false)) {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(prevStarted, Boolean.TRUE);
+            editor.apply();
+
+            final AlertDialog.Builder alert = new AlertDialog.Builder(Magnetometer.this);
+            View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
+
+            Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
+            TextView textView=mView.findViewById (R.id.textFormodal);
+            textView.setText ("Please read instructions by tapping on the button located in bottom right corner of the app...");
+            alert.setView(mView);
+            final AlertDialog alertDialog = alert.create();
+            alertDialog.setCanceledOnTouchOutside(false);
+            btn_okay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                }
+            });
+            alertDialog.show();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

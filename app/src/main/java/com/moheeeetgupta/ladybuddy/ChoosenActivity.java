@@ -1,15 +1,48 @@
 package com.moheeeetgupta.ladybuddy;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ChoosenActivity extends AppCompatActivity {
     CardView instruction, testing;
+    String prevStarted = "yesChoosen";
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedpreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+        if (!sharedpreferences.getBoolean(prevStarted, false)) {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(prevStarted, Boolean.TRUE);
+            editor.apply();
+
+            final AlertDialog.Builder alert = new AlertDialog.Builder(ChoosenActivity.this);
+            View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
+
+            Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
+            TextView textView=mView.findViewById (R.id.textFormodal);
+            textView.setText ("Detecting spy cameras which emit IR rays is mostly known.You can simply use night vision of your phone camera to detect blinking IR rays.But these days very high tech spy cameras are present in the market which do not emit IR rays,so our magnetometer sensor simulation helps you detect those spy cameras very esily..");
+            alert.setView(mView);
+            final AlertDialog alertDialog = alert.create();
+            alertDialog.setCanceledOnTouchOutside(false);
+            btn_okay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alertDialog.dismiss();
+                }
+            });
+            alertDialog.show();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
