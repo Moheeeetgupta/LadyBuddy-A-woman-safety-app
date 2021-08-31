@@ -29,9 +29,9 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="150dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/contact"
+                android:src="@drawable/ic_sos"
                 app:srcCompat="@drawable/ic_sos" />
 
             <TextView
@@ -43,7 +43,9 @@
                 android:text="Setup Emergency SOS service and get help at unsafe places"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:textStyle="bold"/>
 
 
         </androidx.cardview.widget.CardView>
@@ -60,10 +62,10 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="150dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/date"
-                app:srcCompat="@drawable/ic_photographer" />
+                android:src="@drawable/ic_photographer__new"
+                app:srcCompat="@drawable/ic_photographer__new" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -72,6 +74,8 @@
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:text="Detect Spy Cameras anywhere"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -90,9 +94,9 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="150dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/bookmark"
+                android:src="@drawable/ic_world_news"
                 app:srcCompat="@drawable/ic_world_news" />
 
             <TextView
@@ -103,6 +107,8 @@
                 android:gravity="center"
                 android:text="Read Women's empowerment and struggle news and get empowered"
                 android:textColor="#ffffff"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:textSize="18dp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
@@ -118,10 +124,10 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="150dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/chat"
-                app:srcCompat="@drawable/ic_alert" />
+                android:src="@drawable/ic_siren_new"
+                app:srcCompat="@drawable/ic_siren_new" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -129,9 +135,11 @@
                 android:layout_marginTop="90dp"
                 android:background="#202f65"
                 android:gravity="center"
-                android:text="Use this button to deviate the culprit,this can also be trigerred by just tapping the power button 6 times"
+                android:text="Use this button to deviate the culprit, this can also be trigerred by just tapping the power button 6 times"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 android:textStyle="bold" />
         </androidx.cardview.widget.CardView>
 

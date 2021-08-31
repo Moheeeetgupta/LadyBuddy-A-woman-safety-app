@@ -29,7 +29,8 @@
             android:inputType="textMultiLine"
             android:paddingRight="2dp"
             android:paddingLeft="5dp"
-            android:text="\nStep1:- Save relative's phone no.s\nStep2:- Test the SOS Functionality\nStep3:- Run the app in background whenever you feel unsafe:-\nTap the power button 3 times for Emergency messaging and calling\nStep5:- Tap power button 3 times more to start the siren alarm and 3 times more to stop it\n\nRead detailed instructions on the top right corner\n"
+            android:paddingTop="2dp"
+            android:text="\nStep 1:- Save relative's phone no.s\n\nStep 2:- Test the SOS Functionality\n\nStep 3:- Run the app in background whenever you feel unsafe\n\nStep 4:- Tap the power button 3 times for Emergency messaging and calling\n\nStep 5:- Tap power button 3 times more to start the siren alarm and 3 times more to stop it\n\nRead detailed instructions on the top right corner\n"
             android:textAlignment="textStart"
             android:textSize="14sp" />
 
