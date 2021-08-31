@@ -73,8 +73,8 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/bookmark"
-                        app:srcCompat="@drawable/bookmark" />
+                        android:src="@drawable/ic_sos"
+                        app:srcCompat="@drawable/ic_sos" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -111,8 +111,8 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/date"
-                        app:srcCompat="@drawable/date" />
+                        android:src="@drawable/ic_photographer__new"
+                        app:srcCompat="@drawable/ic_photographer__new" />
 
                     <TextView
                         android:id="@+id/current"
@@ -150,8 +150,8 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/bookmark"
-                        app:srcCompat="@drawable/bookmark" />
+                        android:src="@drawable/ic_world_news"
+                        app:srcCompat="@drawable/ic_world_news" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -188,8 +188,8 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/contact"
-                        app:srcCompat="@drawable/contact" />
+                        android:src="@drawable/ic_siren_new"
+                        app:srcCompat="@drawable/ic_siren_new" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -203,45 +203,84 @@
 
             </androidx.cardview.widget.CardView>
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/send_Location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_app_overview"
+                        app:srcCompat="@drawable/ic_app_overview" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="App Overview"
+                        android:textColor="@color/common_google_signin_btn_text_light_pressed"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/about_us"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="12dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_about_us"
+                        app:srcCompat="@drawable/ic_about_us" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="About Us"
+                        android:textColor="@color/common_google_signin_btn_text_light_pressed"
+                        android:textSize="18sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
 
         </GridLayout>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/send_Location"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="12dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="6dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/bug"
-                    app:srcCompat="@drawable/bug" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="App Overview"
-                    android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
