@@ -149,7 +149,7 @@
                 android:text="0"/>
         </LinearLayout>
     </LinearLayout>
-
+    <!--  app:srcCompat="@drawable/bitcoin" -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/magnetoInst"
         android:layout_width="wrap_content"
@@ -159,15 +159,14 @@
         android:background="@color/colorAccent"
         android:clickable="true"
         android:focusable="true"
-        android:foreground="@drawable/bug"
+        android:foreground="@drawable/ic_about_newww"
         app:backgroundTint="@color/colorAccent"
-        app:srcCompat="@drawable/bitcoin"
         tools:ignore="SpeakableTextPresentCheck"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginTop="130dp"
+        android:layout_marginRight="16dp"
         app:elevation="6dp"
         app:pressedTranslationZ="12dp"
 
         />
-
 
 </LinearLayout>

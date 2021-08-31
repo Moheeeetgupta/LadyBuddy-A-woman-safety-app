@@ -35,7 +35,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    CardView siren, location, Settings, currentlocation, community, news;
+    CardView siren, location, Settings, currentlocation, community, news, aboutUs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         Settings = findViewById( R.id.Settings );
         currentlocation = findViewById( R.id.Currentlocation );
         news = findViewById( R.id.News );
+        aboutUs = findViewById( R.id.about_us );
         // community=findViewById (R.id.community);
         siren.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -128,6 +129,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity( new Intent( getApplicationContext(), NewsActivity.class ) );
+            }
+        } );
+
+
+        aboutUs.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity( new Intent( getApplicationContext(), AboutUs.class ) );
             }
         } );
 
