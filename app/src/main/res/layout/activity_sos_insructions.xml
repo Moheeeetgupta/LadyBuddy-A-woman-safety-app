@@ -20,30 +20,30 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:textColor="#000000"
             android:layout_marginTop="15dp"
             android:gravity="center_horizontal"
-            android:text="INSTRUCTIONS for using Emergency SOS :-"/>
+            android:text="INSTRUCTIONS for Emergency Service"
+            android:textColor="#000000"
+            android:textSize="16dp" />
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="65dp"
-    >
-
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="20dp"
-            android:inputType="textMultiLine"
-            android:padding="6dp"
-            android:layout_marginTop="8dp"
-            android:textColor="#000000"
-            android:layout_marginLeft="8dp"
-            android:text="Step1:-Save maximum four contact numbers of your relatives.\n\nStep2:-Tap TRY IT button to test the functionality of the SOS.\n\nStep3:-The app will send SMS with your live location to all four
-numbers and make phone call to first number. The live location will not be a link instead it will be longitude, latitude and the exact place wherever you are present so that your relatives could take action even if they don't have internet connection.\n\nStep4:-Now, Ladybuddy is ready to help you in emergency situations.\n\nLet's see how you will use ladybuddy in emergency:-\n\nStep1:- Whenever you are entering into any unsafe place, just open the app and press back or home button so that the app starts running in the background. Make Sure that app is running in the background that means it is in the system tray.\n\nStep2:-Whenever you feel emergency ,tapping power button three times will send Emergency SOS message and call, tapping it again three times will start a siren to deviate the culprit. Make Sure that all these 6 times tapping should be in one minute otherwise you will have to again start tapping count from zero.\n\nStep3:-Tapping power button again three times or closing the app from background will stop the siren.\n\n"/>
-</ScrollView>
+            android:layout_marginTop="65dp"
+            android:background="@color/lightGray">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textMultiLine"
+                android:padding="6dp"
+                android:text="Step1:-Save maximum four contact numbers of your relatives.\n\nStep2:-Tap TRY IT button to test the functionality of the SOS.\n\nStep3:-The app will send SMS with your live location to all four
+numbers and make phone call to first number. The live location will not be a link, instead it will be longitude, latitude and the exact place wherever you are present, so that your relatives could take action even if they don't have internet connection.\n\nStep4:-Now, Ladybuddy is ready to help you in emergency situations.\n\nLet's see how you will use ladybuddy in emergency:-\n\nStep1:- Whenever you go through any unsafe place, just open the app and press back or home button so that the app starts running in the background.\n\nStep2:- Make Sure that app is running in the background that means it is in the system tray.\n\nStep3:-Whenever you feel emergency ,tapping power button three times will send Emergency message and call, tapping it again three times will start a siren to deviate the culprit.\n\nStep4:- Make Sure that all these 6 times tapping should be in one minute otherwise you will have to again start tapping count from zero.\n\nStep5:-Tapping power button again three times or closing the app from background will stop the siren.\n\n"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

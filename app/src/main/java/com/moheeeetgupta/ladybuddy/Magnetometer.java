@@ -67,9 +67,9 @@ public class Magnetometer extends AppCompatActivity implements SensorEventListen
             TextView textView=mView.findViewById (R.id.textFormodal);
             textView.setText ("Short instructions:-\n" +
                     "\n" +
-                    "Move the phone near all the suspected areas to detect the spy camera. \n" +
+                    "Move the phone near all the suspected areas to detect the spy camera \n" +
                     "\n" +
-                    "For detailed instructions read instructions at the bottom right corner.");
+                    "Read detailed instructions by tapping on the button located at the bottom right corner of the screen");
             alert.setView(mView);
             final AlertDialog alertDialog = alert.create();
             alertDialog.setCanceledOnTouchOutside(false);

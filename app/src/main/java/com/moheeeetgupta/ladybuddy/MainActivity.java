@@ -54,19 +54,19 @@ public class MainActivity extends AppCompatActivity {
 
             Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
             TextView textView=mView.findViewById (R.id.textFormodal);
-            textView.setText ("\nSending SMS :-\n" +
+            textView.setText ("\nLadyBuddy needs access to:- \nSending SMS :-\n" +
                     "\n" +
-                    "Ladybudy have a feature that whenever a woman is in danger, then she needs to tap the power button just three times and an emergency message will be sent to her 4 dear ones so we need the SEND SMS permission. \n" +
+                    "Emergency messaging needs SEND SMS permission \n" +
                     "\n" +
-                    "Accessing Location :-\n" +
+                    "Location :-\n" +
                     "\n" +
-                    "The message sent will be integrated with the live location of the woman, so we need the location access. \n" +
+                    "Messaging embedded with live location needs Location permission\n" +
                     "\n" +
                     "Phone Call:-\n" +
                     "\n" +
-                    "The app will simultaneously also make a phone call to the first phone number. So, we need CALL PHONE permission. \n" +
+                    "Emergency Calling needs CALL PHONE permission\n" +
                     "\n" +
-                    "Declaration:- The app is totally developed in INDIA  and every data related to this app is stored locally, not a single bit of data is transferred to developing team.\n");
+                    "Declaration:- The app is solely developed by INDIAN Developers and all data related to this app is stored locally in your phone.\n");
             CheckBox checkbox = (CheckBox)mView.findViewById(R.id.checkBox);
             TextView checkBoxtext = (TextView)mView.findViewById(R.id.checkBoxText);
             checkbox.setVisibility (View.VISIBLE);

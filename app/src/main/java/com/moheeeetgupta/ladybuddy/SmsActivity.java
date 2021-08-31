@@ -192,6 +192,20 @@ public class SmsActivity extends AppCompatActivity {
         tryIt ();
     }
     public  void tryIt(){
+        if(!txt_pnumber1.getText ().toString ().trim ().equals ("")) {
+            /**
+             * ContextCompat :- It is a class for replacing some work with base context.
+             * For example if you used before something like getContext().getColor(R.color.black);
+             * Now its deprecated since android 6.0 (API 22+) so you should use: getContext().getColor(R.color.black,theme);
+             */
+            if (ContextCompat.checkSelfPermission (SmsActivity.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                makeCall ();
+            } else {
+                ActivityCompat.requestPermissions (this, new String[]{Manifest.permission.CALL_PHONE}, 1);
+            }
+        }else{
+            Toast.makeText (this,"Please enter first number...",Toast.LENGTH_LONG);
+        }
         int permissionCheck = ContextCompat.checkSelfPermission (this, Manifest.permission.SEND_SMS);
         if (permissionCheck == PackageManager.PERMISSION_GRANTED) {
             if ( ContextCompat.checkSelfPermission (SmsActivity.this,
@@ -212,16 +226,6 @@ public class SmsActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions (this, new String[]{Manifest.permission.SEND_SMS}, 0);
         }
 
-        /**
-         * ContextCompat :- It is a class for replacing some work with base context.
-         * For example if you used before something like getContext().getColor(R.color.black);
-         * Now its deprecated since android 6.0 (API 22+) so you should use: getContext().getColor(R.color.black,theme);
-         */
-        if (ContextCompat.checkSelfPermission (SmsActivity.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-            makeCall();
-        } else {
-            ActivityCompat.requestPermissions (this, new String[]{Manifest.permission.CALL_PHONE}, 1);
-        }
 
     }
     //Calling function
@@ -357,15 +361,29 @@ public class SmsActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
 
-            case R.id.action_instructions:
+            case R.id.action_Detailed_instructions:
                 startActivity( new Intent( getApplicationContext(), SosInsructionsActivity.class ) );
                 return true;
-                default:
-                return false;
 
+            case R.id.action_Short_instructions:
+                final AlertDialog.Builder alert = new AlertDialog.Builder(SmsActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
+
+                Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
+                alert.setView(mView);
+                final AlertDialog alertDialog = alert.create();
+                alertDialog.setCanceledOnTouchOutside(false);
+                btn_okay.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+                alertDialog.show();
+            default:
+                return false;
 
         }
 
     }
-
 }

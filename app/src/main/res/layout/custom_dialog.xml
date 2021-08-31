@@ -1,77 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="15dp">
+    android:orientation="vertical"
+    android:padding="4dp">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6"
-        >
+        android:background="@color/lightGray">
 
-    <TextView
-        android:id="@+id/textFormodal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingRight="2dp"
-        android:text="\nShort instructions:- \n\nSave relative's phone no.s.\n
-Test the SOS Functionality.\n
+        <TextView
+            android:id="@+id/textFormodal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:paddingRight="2dp"
+            android:text="\nShort Instructions:- \n\n Step1:- Save relative's phone no.s\n
+Step2:- Test the SOS Functionality\n
 
-Run the app in background whenever you feel unsafe.\n
+Step3:- Run the app in background whenever you feel unsafe\n
 
-Tap the power button 3 times to send Emergency message with live location and call to first no.\n
+Step4:- Tap the power button 3 times for Emergency messaging and calling\n
 
-Tap power button 3 times more for starting a siren alarm to deviate thr culprit.\n
+Step5:- Tap power button 3 times more to start the siren alarm and 3 times more to stop it\n\n
 
-For detailed instructions, read instructions on the top right corner.\n"
-        android:textSize="18sp"
-        android:textAlignment="center"
-        android:inputType="textMultiLine"
-        android:gravity="center" />
+Read detailed instructions on the top right corner\n"
+            android:textAlignment="center"
+            android:textSize="14sp" />
 
     </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
+        android:orientation="horizontal">
+
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="6dp"
-            android:visibility="invisible"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
             android:enabled="false"
-            android:layout_marginBottom="3dp"
             android:textColor="@color/colorPrimary"
-            android:layout_marginLeft="4dp" />
+            android:visibility="invisible" />
 
         <TextView
             android:id="@+id/checkBoxText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
             android:enabled="false"
             android:text="TextView"
-            android:layout_gravity="center"
-            />
+            android:visibility="invisible" />
 
 
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_okay"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="2dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/button"
         android:backgroundTint="@color/colorPrimary"
         android:text="Okay"
-        android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
-        android:textSize="18sp"
-        android:id="@+id/btn_okay"
-        android:layout_marginBottom="30dp"/>
+        android:textSize="18sp" />
 </LinearLayout>
