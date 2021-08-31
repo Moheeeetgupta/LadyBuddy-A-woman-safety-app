@@ -9,28 +9,32 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="25dp"
         app:cardCornerRadius="15dp"
-        >
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="14dp"
-            android:inputType="textMultiLine"
-            android:layout_marginTop="8dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="2dp"
-            android:textColor="#000000"
-            android:layout_marginLeft="8dp"
-            android:text="Possibility of a Hidden Camera in changing room is almost 20%. \n\nScan for devices listed below: \n\n1. Mirror - Precaution: Touch the mirror. Do you feel any gap between your finger and its reflection? if NO, there could be a hidden camera behind the mirror glass. Report Immediately or change the room. \n\n2. Hanger - Check for lens looking aperture for hanger specially screw looking objects. Put cloths covering all screws. \n\n3. Ceiling/Smoke Detector - Precaution: Apply sticker/tape over the viewable part of the detector."
-            />
+            android:layout_height="match_parent">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textMultiLine"
+                android:paddingLeft="5dp"
+                android:paddingRight="2dp"
+                android:paddingBottom="15dp"
+                android:text="Possibility of a Hidden Camera in changing room is almost 20%. \n\nScan for devices listed below: \n\n1. Mirror - \nPrecaution: Touch the mirror. Do you feel any gap between your finger and its reflection? if NO, there could be a hidden camera behind the mirror glass. Report Immediately or change the room. \n\n2. Hanger - \nPrecaution: Check for lens looking aperture for hanger specially screw looking objects. Put cloths covering all screws. \n\n3. Ceiling/Smoke Detector - \nPrecaution: Apply sticker/tape over the viewable part of the detector."
+                android:textColor="#000000"
+                android:textSize="14dp" />
+        </ScrollView>
 
     </androidx.cardview.widget.CardView>
 

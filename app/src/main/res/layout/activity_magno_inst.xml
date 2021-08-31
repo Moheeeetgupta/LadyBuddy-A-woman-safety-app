@@ -9,8 +9,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:gravity="start"
         android:textColor="#000000"
         android:text="Where are you NOW?"
@@ -79,7 +78,7 @@
             android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="3dp"
             android:gravity="center"
             android:text="Next"
             android:textColor="#ECE8E5"

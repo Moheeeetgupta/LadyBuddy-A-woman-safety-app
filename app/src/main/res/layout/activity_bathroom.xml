@@ -9,28 +9,34 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical"
         app:cardCornerRadius="15dp"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="14dp"
-            android:inputType="textMultiLine"
-            android:layout_marginTop="8dp"
-            android:textColor="#000000"
-            android:layout_marginLeft="8dp"
-            android:paddingLeft="5dp"
-            android:paddingRight="2dp"
-            android:text="Possibility of a Hidden Camera in bathroom is almost 12%. \n\nScan for devices listed below: \n\n1. Water Heater - Precaution: Turn it off before taking bath. \n\n2. Mirror - Precaution: Touch the mirror. Do you feel any gap between your finger and its reflection? if NO, there could be a hidden camera behind the mirror glass. \n\n3. Ceiling/Smoke Detector - Precaution: Apply sticker/tape over the viewable part of the detector. \n\n4. Lamps or Bulbs - Precaution: You cannot do much about that, but still use curtains whenever possible."/>
+            android:layout_height="match_parent">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textMultiLine"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="15dp"
+                android:text="Possibility of a Hidden Camera in bathroom is almost 12%. \n\nScan for devices listed below: \n\n1. Water Heater - \nPrecaution: Turn it off before taking bath. \n\n2. Mirror - \nPrecaution: Touch the mirror. Do you feel any gap between your finger and its reflection? if NO, there could be a hidden camera behind the mirror glass. \n\n3. Ceiling/Smoke Detector - \nPrecaution: Apply sticker/tape over the viewable part of the detector. \n\n4. Lamps or Bulbs - \nPrecaution: You cannot do much about that, but still use curtains whenever possible."
+                android:textColor="#000000"
+                android:textSize="14dp" />
 
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

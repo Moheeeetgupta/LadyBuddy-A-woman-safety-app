@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6"
+        android:layout_marginTop="5dp"
         android:background="@color/lightGray">
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,12 +83,12 @@
                 android:id="@+id/textCall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:paddingLeft="5dp"
                 android:inputType="textMultiLine"
                 android:paddingRight="2dp"
                 android:text=""
-                android:textAlignment="center"
+                android:textAlignment="textStart"
                 android:textSize="14sp" />
             <TextView
                 android:id="@+id/declaration"
