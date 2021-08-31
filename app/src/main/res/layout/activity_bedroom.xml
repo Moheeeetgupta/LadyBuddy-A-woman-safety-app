@@ -21,12 +21,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="20dp"
+            android:textSize="14dp"
             android:inputType="textMultiLine"
             android:layout_marginTop="8dp"
             android:textColor="#000000"
             android:layout_marginLeft="8dp"
-            android:text="Possibility of a Hidden Camera in bedroom is almost 15%. \n\n Scan for devices listed below: \n\n 1. Smoke Detector - Precaution: Apply sticker/tape over the viewable part of the detector. \n\n 2. Air Conditioner - Precaution: Use fan and turn off the AC if possible. Turn rotating blades off. \n\n 3. Television - Precaution: Turn off main supply, keep objects in front of lens looking part of the TV. \n\n 4. Night Lamp - Precaution: Keep it off or change it's position. \n\n 5. Flower Pot - Change position to least viewable area. \n\n 6. Coffee Maker - Precaution: Unplug it and put it inside cupboard. \n\n Finally Do NOT forget to turn off the lights."/>
+            android:paddingLeft="5dp"
+            android:paddingRight="2dp"
+            android:text="Possibility of a Hidden Camera in bedroom is almost 15%. \n\nScan for devices listed below: \n\n1. Smoke Detector - Precaution: Apply sticker/tape over the viewable part of the detector. \n\n2. Air Conditioner - Precaution: Use fan and turn off the AC if possible. Turn rotating blades off. \n\n3. Television - Precaution: Turn off main supply, keep objects in front of lens looking part of the TV. \n\n4. Night Lamp - Precaution: Keep it off or change it's position. \n\n 5.Flower Pot - Change position to least viewable area. \n\n6. Coffee Maker - Precaution: Unplug it and put it inside cupboard. \n\n Finally Do NOT forget to turn off the lights."/>
 
 
 
