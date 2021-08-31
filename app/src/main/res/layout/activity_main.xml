@@ -82,7 +82,7 @@
                         android:layout_marginTop="12dp"
                         android:text="Emergency SOS"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -119,9 +119,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Spy Camera "
+                        android:text="Hidden Camera "
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -159,7 +159,7 @@
                         android:layout_marginTop="12dp"
                         android:text="Women's News"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -197,7 +197,7 @@
                         android:layout_marginTop="12dp"
                         android:text="Siren Alert"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -235,7 +235,7 @@
                         android:layout_marginTop="12dp"
                         android:text="App Tour"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -273,7 +273,7 @@
                         android:layout_marginTop="12dp"
                         android:text="About Us"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 

@@ -48,9 +48,7 @@
                     android:hint="Enter first phone number..."
                     android:inputType="phone"
                     android:textColor="@color/design_default_color_on_secondary"
-                    android:textColorHighlight="@color/design_default_color_on_secondary"
-                    android:textColorLink="@color/design_default_color_on_secondary"
-                    android:textCursorDrawable="@color/design_default_color_on_secondary" />
+                   />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -85,10 +83,7 @@
                     android:inputType="phone"
                     android:padding="1dp"
                     android:textColor="@color/design_default_color_on_secondary"
-                    android:textColorHighlight="@color/design_default_color_on_secondary"
-                    android:textColorHint="@color/design_default_color_on_secondary"
-                    android:textColorLink="@color/design_default_color_on_secondary"
-                    android:textCursorDrawable="@color/design_default_color_on_secondary" />
+                   />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -123,10 +118,7 @@
                     android:inputType="phone"
                     android:padding="1dp"
                     android:textColor="@color/design_default_color_on_secondary"
-                    android:textColorHighlight="@color/design_default_color_on_secondary"
-                    android:textColorHint="@color/design_default_color_on_secondary"
-                    android:textColorLink="@color/design_default_color_on_secondary"
-                    android:textCursorDrawable="@color/design_default_color_on_secondary" />
+                    />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -160,10 +152,7 @@
                     android:inputType="phone"
                     android:padding="1dp"
                     android:textColor="@color/design_default_color_on_secondary"
-                    android:textColorHighlight="@color/design_default_color_on_secondary"
-                    android:textColorHint="@color/design_default_color_on_secondary"
-                    android:textColorLink="@color/design_default_color_on_secondary"
-                    android:textCursorDrawable="@color/design_default_color_on_secondary" />
+                     />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -198,10 +187,7 @@
                     android:inputType="text"
                     android:padding="1dp"
                     android:textColor="@color/design_default_color_on_secondary"
-                    android:textColorHighlight="@color/design_default_color_on_secondary"
-                    android:textColorHint="@color/design_default_color_on_secondary"
-                    android:textColorLink="@color/design_default_color_on_secondary"
-                    android:textCursorDrawable="@color/design_default_color_on_secondary" />
+                     />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>

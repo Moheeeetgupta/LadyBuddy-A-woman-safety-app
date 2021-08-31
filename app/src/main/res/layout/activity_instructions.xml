@@ -73,9 +73,9 @@
                 android:layout_marginTop="90dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:text="Detect Spy Cameras anywhere"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
+                android:text="Detect hidden Cameras anywhere"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold" />

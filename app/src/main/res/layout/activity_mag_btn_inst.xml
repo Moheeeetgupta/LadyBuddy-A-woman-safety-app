@@ -39,12 +39,12 @@
                 android:layout_marginTop="8dp"
                 android:inputType="textMultiLine"
                 android:padding="6dp"
-                android:text="Installation of spy cameras at various public places used by women have been one
+                android:text="Installation of Hidden cameras at various public places used by women has been one
 of the greatest havoc problems of women's self respect and dignity.
 
-So, This feature of ladyBuddy helps women to detect spy cameras anywhere.\n\nTypes of spy cameras :-\n\n1. Spy cameras which emit IR rays :-\n\nYour phone's camera with night vision can detect the blinking of these rays same as we test the remote control of TV . \n\n2. Advanced Electronic Spy cameras :-\n\nThese cameras do not emit IR rays but as these are electronic cameras so they radiate Electromagnetic radiations.\n\nAnd we have created a simulation by the help of the magnetometer sensor of your phone which helps you detect any electronic device. \nBut as the spy cameras are installed mostly at those places where use of electronic devices is not needed. \nSo, detecting any electronic device at those places ensures the chances of spy camera installation.
+So, This feature of ladyBuddy helps women to detect hidden cameras anywhere.\n\nTypes of Hidden cameras :-\n\n1. Hidden cameras which emit IR rays :-\n\nYour phone's camera with night vision can detect the blinking of these rays same as we test the remote control of TV . \n\n2. Advanced Electronic Hidden cameras :-\n\nThese cameras do not emit IR rays but as these are electronic cameras so they radiate Electromagnetic radiations.\n\nAnd we have developed a simulation by the help of the magnetometer sensor of your phone which helps you detect any electronic device. \nBut as the hidden cameras are installed mostly at those places where use of electronic devices is not needed. \nSo, detecting any electronic device at those places ensures the chances of spy camera installation.
 
-\nYou have to just move and scan all the suspected places by your phone. Make sure that the phone is very much close to the suspected area.\n\n"
+\nYou have to just move and scan all the suspected places by your phone and if there is any hidden camera then LadyBuddy will start beeping. Make sure that the phone is very much close to the suspected area.\n\n"
                 android:textColor="#000000"
                 android:textSize="14sp" />
         </ScrollView>

@@ -13,10 +13,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
-        android:background="@drawable/button"
+        android:background="@color/white"
         android:padding="12dp"
         android:text="Contact Us"
-        android:textColor="@color/white"
+        android:textColor="@color/design_default_color_on_secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.465"
@@ -57,7 +57,7 @@
                 android:layout_marginTop="8dp"
                 android:inputType="textMultiLine"
                 android:padding="6dp"
-                android:text="We are a team of developers who have tried to solve a huge havoc problem faced by the human civilization till date.The problems faced by women whether it be feeling unsafe at various places or getting captured by spy cameras, we have tried to solve these problems by the help of technology.You can send us suggestions,tokens of appreciation or criticism by tapping on the contact us button.  "
+                android:text="We are a team of developers who have tried to solve a huge havoc problem faced by the human civilization till date.The problems faced by women whether it be feeling unsafe at various places or getting captured by hidden cameras, we have tried to solve these problems by the help of technology.You can send us suggestions,tokens of appreciation or criticism by tapping on the contact us button.  "
                 android:textColor="#000000"
                 android:textSize="16sp" />
 
