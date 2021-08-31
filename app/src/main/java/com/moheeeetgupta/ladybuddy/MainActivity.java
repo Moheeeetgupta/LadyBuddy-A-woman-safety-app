@@ -79,10 +79,10 @@ public class MainActivity extends AppCompatActivity {
             checkBoxtext.setEnabled (true);
 
             checkbox.setText("");
-            checkBoxtext.setText(Html.fromHtml("I agree to the " +
-                    "<a href='https://www.websitepolicies.com/policies/view/sLfvQSXP'>TERMS AND CONDITIONS</a>"));
-            textView.setClickable(true);
-            textView.setMovementMethod(LinkMovementMethod.getInstance());
+            checkBoxtext.setText(Html.fromHtml("I accept the " +
+                    "<a href='https://www.websitepolicies.com/policies/view/IaK4RjyB'>PRIVACY POLICY</a>"+" of the app"));
+            checkBoxtext.setClickable(true);
+            checkBoxtext.setMovementMethod(LinkMovementMethod.getInstance());
             alert.setView(mView);
             final AlertDialog alertDialog = alert.create();
             alertDialog.setCanceledOnTouchOutside(false);
