@@ -204,7 +204,7 @@
         android:background="@color/white"
         android:clickable="true"
         android:onClick="btn_send"
-        android:text="Try it!"
+        android:text="Try it"
         android:textColor="@color/design_default_color_on_secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

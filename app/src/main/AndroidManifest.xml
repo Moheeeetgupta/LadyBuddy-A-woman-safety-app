@@ -31,7 +31,7 @@
         <activity
             android:name="com.teamDroiders.ladybuddy.MagnoInst"
             android:exported="true"
-            android:label="@string/instructions"
+            android:label="Manual Detection"
             android:parentActivityName="com.teamDroiders.ladybuddy.ChoosenActivity"
             android:theme="@style/Theme.New" />
         <activity
@@ -49,24 +49,24 @@
         <activity
             android:name="com.teamDroiders.ladybuddy.ChoosenActivity"
             android:exported="true"
-            android:label="@string/choose_buttons"
+            android:label="Detect Hidden Cameras"
             android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.NewsActivity"
             android:exported="true"
-            android:label="@string/news"
+            android:label="Women's News"
             android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.Instructions"
-            android:label="@string/instruction"
+            android:label="App Tour"
             android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
         <activity android:name="com.teamDroiders.ladybuddy.webactivity" />
         <activity
             android:name="com.teamDroiders.ladybuddy.SmsActivity"
-            android:label="@string/setting"
+            android:label="Emergency Service"
             android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
         <activity android:name="com.teamDroiders.ladybuddy.CurrentLocation" />
