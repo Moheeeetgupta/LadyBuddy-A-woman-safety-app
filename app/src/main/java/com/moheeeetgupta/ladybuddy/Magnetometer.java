@@ -64,9 +64,8 @@ public class Magnetometer extends AppCompatActivity implements SensorEventListen
 
             Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
             TextView textView=mView.findViewById (R.id.textFormodal);
-            textView.setText ("Short instructions:-\n" +
-                    "\n" +
-                    "Move the phone near all the suspected areas to detect the spy camera \n" +
+            textView.setText ("\n" +
+                    "Move the phone near all the suspected areas to detect the spy camera. \n" +
                     "\n" +
                     "Read detailed instructions by tapping on the button located at the bottom right corner of the screen");
             alert.setView(mView);

@@ -21,12 +21,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="20dp"
+            android:textSize="14dp"
             android:inputType="textMultiLine"
             android:layout_marginTop="8dp"
             android:textColor="#000000"
+            android:paddingLeft="5dp"
+            android:paddingRight="2dp"
             android:layout_marginLeft="8dp"
-            android:text="While Outside you might be under CCTV camera. \n\n In Outside world, you are not supposed to hide your identity in official places. \n\n So just be cautious and behave accordingly."
+            android:text="While Outside you might be under CCTV camera. \n\nIn Outside world, you are not supposed to hide your identity in official places. so just be cautious and behave accordingly."
 
             />
 

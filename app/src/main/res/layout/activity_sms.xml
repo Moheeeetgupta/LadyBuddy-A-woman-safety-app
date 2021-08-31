@@ -31,11 +31,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:textColorHint="@color/design_default_color_on_secondary"
                 android:theme="@style/EditTextThemeOverlay"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColorHint="@color/design_default_color_on_secondary"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -49,7 +49,6 @@
                     android:inputType="phone"
                     android:textColor="@color/design_default_color_on_secondary"
                     android:textColorHighlight="@color/design_default_color_on_secondary"
-                    android:textColorHint="@color/design_default_color_on_secondary"
                     android:textColorLink="@color/design_default_color_on_secondary"
                     android:textCursorDrawable="@color/design_default_color_on_secondary" />
             </com.google.android.material.textfield.TextInputLayout>

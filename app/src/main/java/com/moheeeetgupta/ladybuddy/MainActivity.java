@@ -1,10 +1,15 @@
 package com.moheeeetgupta.ladybuddy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import android.Manifest;
 import android.content.Intent;
@@ -14,10 +19,20 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     CardView siren, location, Settings, currentlocation, community, news, aboutUs;
@@ -35,24 +50,27 @@ public class MainActivity extends AppCompatActivity {
 
 
             final AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-            View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
+            View mView = getLayoutInflater().inflate(R.layout.custom_dialog_mainactivity,null);
 
             Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
+            TextView heading=mView.findViewById (R.id.heading);
+            heading.setText("LadyBuddy needs access to");
+            TextView sms=mView.findViewById (R.id.sms);
+            sms.setText("Sending SMS:-");
             TextView textView=mView.findViewById (R.id.textFormodal);
-            textView.setText ("\nLadyBuddy needs access to:- \nSending SMS :-\n" +
-                    "\n" +
-                    "Emergency messaging needs SEND SMS permission \n" +
-                    "\n" +
-                    "Location :-\n" +
-                    "\n" +
-                    "Messaging embedded with live location needs Location permission\n" +
-                    "\n" +
-                    "Phone Call:-\n" +
-                    "\n" +
-                    "Emergency Calling needs CALL PHONE permission\n" +
-                    "\n" +
-                    "Declaration:- The app is solely developed by INDIAN Developers and all data related to this app is stored locally in your phone.\n");
-
+            textView.setText ("Emergency messaging needs SEND SMS permission");
+            TextView location=mView.findViewById (R.id.location);
+            location.setText("Location:-");
+            TextView locationText=mView.findViewById (R.id.textLocation);
+            locationText.setText("Messaging embedded with live location needs Location permission");
+            TextView call=mView.findViewById (R.id.call);
+            call.setText("Phone Call:-");
+            TextView callText=mView.findViewById (R.id.textCall);
+            callText.setText("Emergency Calling needs CALL PHONE permission");
+            TextView declaration=mView.findViewById (R.id.declaration);
+            declaration.setText("Declaration");
+            TextView declaratioText=mView.findViewById (R.id.textDeclaration);
+            declaratioText.setText("The app is solely developed by INDIAN Developers and all data related to this app is stored locally in your phone.");
             CheckBox checkbox = (CheckBox)mView.findViewById(R.id.checkBox);
             TextView checkBoxtext = (TextView)mView.findViewById(R.id.checkBoxText);
             checkbox.setVisibility (View.VISIBLE);
@@ -61,10 +79,10 @@ public class MainActivity extends AppCompatActivity {
             checkBoxtext.setEnabled (true);
 
             checkbox.setText("");
-            checkBoxtext.setText(Html.fromHtml("I accept the " +
-                    "<a href='https://www.websitepolicies.com/policies/view/IaK4RjyB'>PRIVACY POLICY </a>"+"of the app"));
-            checkBoxtext.setClickable(true);
-            checkBoxtext.setMovementMethod(LinkMovementMethod.getInstance());
+            checkBoxtext.setText(Html.fromHtml("I agree to the " +
+                    "<a href='https://www.websitepolicies.com/policies/view/sLfvQSXP'>TERMS AND CONDITIONS</a>"));
+            textView.setClickable(true);
+            textView.setMovementMethod(LinkMovementMethod.getInstance());
             alert.setView(mView);
             final AlertDialog alertDialog = alert.create();
             alertDialog.setCanceledOnTouchOutside(false);
