@@ -50,23 +50,27 @@ public class MainActivity extends AppCompatActivity {
 
 
             final AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
-            View mView = getLayoutInflater().inflate(R.layout.custom_dialog,null);
+            View mView = getLayoutInflater().inflate(R.layout.custom_dialog_mainactivity,null);
 
             Button btn_okay = (Button)mView.findViewById(R.id.btn_okay);
+            TextView heading=mView.findViewById (R.id.heading);
+            heading.setText("LadyBuddy needs access to");
+            TextView sms=mView.findViewById (R.id.sms);
+            sms.setText("Sending SMS:-");
             TextView textView=mView.findViewById (R.id.textFormodal);
-            textView.setText ("\nLadyBuddy needs access to:- \nSending SMS :-\n" +
-                    "\n" +
-                    "Emergency messaging needs SEND SMS permission \n" +
-                    "\n" +
-                    "Location :-\n" +
-                    "\n" +
-                    "Messaging embedded with live location needs Location permission\n" +
-                    "\n" +
-                    "Phone Call:-\n" +
-                    "\n" +
-                    "Emergency Calling needs CALL PHONE permission\n" +
-                    "\n" +
-                    "Declaration:- The app is solely developed by INDIAN Developers and all data related to this app is stored locally in your phone.\n");
+            textView.setText ("Emergency messaging needs SEND SMS permission");
+            TextView location=mView.findViewById (R.id.location);
+            location.setText("Location:-");
+            TextView locationText=mView.findViewById (R.id.textLocation);
+            locationText.setText("Messaging embedded with live location needs Location permission");
+            TextView call=mView.findViewById (R.id.call);
+            call.setText("Phone Call:-");
+            TextView callText=mView.findViewById (R.id.textCall);
+            callText.setText("Emergency Calling needs CALL PHONE permission");
+            TextView declaration=mView.findViewById (R.id.declaration);
+            declaration.setText("Declaration");
+            TextView declaratioText=mView.findViewById (R.id.textDeclaration);
+            declaratioText.setText("The app is solely developed by INDIAN Developers and all data related to this app is stored locally in your phone.");
             CheckBox checkbox = (CheckBox)mView.findViewById(R.id.checkBox);
             TextView checkBoxtext = (TextView)mView.findViewById(R.id.checkBoxText);
             checkbox.setVisibility (View.VISIBLE);

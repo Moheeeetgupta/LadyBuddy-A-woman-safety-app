@@ -28,7 +28,7 @@
     </style>
 
     <style name="EditTextThemeOverlay" parent="ThemeOverlay.AppCompat">
-        <item name="colorAccent">#ffffff</item>
+        <item name="colorAccent">#000000</item>
     </style>
 
 
