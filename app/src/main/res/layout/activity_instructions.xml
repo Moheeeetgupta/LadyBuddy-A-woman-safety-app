@@ -31,15 +31,16 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/contact" />
+                android:src="@drawable/contact"
+                app:srcCompat="@drawable/ic_sos" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="102dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="90dp"
                 android:background="#202f65"
                 android:gravity="center"
-                android:text=' Tap the "siren" button to check its sound level  '
+                android:text="Setup Emergency SOS service and get help at unsafe places"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -61,15 +62,16 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/date" />
+                android:src="@drawable/date"
+                app:srcCompat="@drawable/ic_photographer" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="102dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="90dp"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
-                android:text='Tap the  "Current location" button and allow the required permissions'
+                android:text="Detect Spy Cameras anywhere"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -79,26 +81,27 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/card3"
             android:layout_width="match_parent"
-            android:layout_marginTop="500dp"
+            android:layout_height="190dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="500dp"
             android:layout_marginRight="10dp"
-            app:cardCornerRadius="35dp"
-            android:layout_height="190dp">
+            app:cardCornerRadius="35dp">
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/bookmark"/>
+                android:src="@drawable/bookmark"
+                app:srcCompat="@drawable/ic_world_news" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="90dp"
                 android:background="#202f65"
                 android:gravity="center"
-                android:text="Tap the &quot;Settings&quot; button and save your four trusted relative's phone numbers and the tap try it and allow the required permissions"
+                android:text="Read Women's empowerment and struggle news and get empowered"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold" />
@@ -117,14 +120,16 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/chat"/>
+                android:src="@drawable/chat"
+                app:srcCompat="@drawable/ic_alert" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="110dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="90dp"
                 android:background="#202f65"
                 android:gravity="center"
-                android:text='Tap here "Join only female community" to empower  and get empowered.'
+                android:text="Use this button to deviate the culprit,this can also be trigerred by just tapping the power button 6 times"
                 android:textColor="#ffffff"
                 android:textSize="18dp"
                 android:textStyle="bold" />

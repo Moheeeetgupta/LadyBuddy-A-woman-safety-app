@@ -14,18 +14,13 @@ import android.location.Geocoder;
 import android.location.Location;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
 import android.os.CountDownTimer;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
 import android.telephony.SmsManager;
 import android.util.Log;
-import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -37,7 +32,6 @@ import java.util.List;
 import java.util.Locale;
 
 import static android.content.Context.MODE_PRIVATE;
-import static android.content.Context.VIBRATOR_SERVICE;
 
 
 public class ScreenOnOffReceiver extends BroadcastReceiver {
@@ -50,7 +44,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
     int timer=0;
     // Time is in millisecond so 50sec = 50000 I have used
     // countdown Interveal is 1sec = 1000 I have used
-    public CountDownTimer countDownTimer=new CountDownTimer (60000, 1000) {
+    public CountDownTimer countDownTimer=new CountDownTimer (30000, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
             timer++;
@@ -60,7 +54,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
         @Override
         public void onFinish() {
-            timer=90;
+            timer=30;
         }
     };
     @Override
@@ -75,7 +69,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
         }else
         if(powerBtnTapCount>0) {
-           if(timer<90) {
+           if(timer<30) {
                if (Intent.ACTION_SCREEN_OFF.equals (action) || Intent.ACTION_SCREEN_ON.equals (action)) {  // ACTION_SCREEN_OFF :- read by just tapping on it where this is used
                    powerBtnTapCount++;
                    Log.d (SCREEN_TOGGLE_TAG, "Power button tapped in timer "+timer+"  "+ powerBtnTapCount);

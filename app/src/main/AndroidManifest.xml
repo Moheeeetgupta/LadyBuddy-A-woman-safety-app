@@ -17,70 +17,70 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".AboutUs"
+            android:name="com.moheeeetgupta.ladybuddy.AboutUs"
             android:exported="true" />
         <activity
-            android:name=".MagBtnInst"
+            android:name="com.moheeeetgupta.ladybuddy.MagBtnInst"
             android:exported="true" />
         <activity
-            android:name=".SosInsructionsActivity"
+            android:name="com.moheeeetgupta.ladybuddy.SosInsructionsActivity"
             android:exported="true" />
         <activity
-            android:name=".Magnetometer"
+            android:name="com.moheeeetgupta.ladybuddy.Magnetometer"
             android:exported="true" />
         <activity
-            android:name=".MagnoInst"
+            android:name="com.moheeeetgupta.ladybuddy.MagnoInst"
             android:exported="true"
             android:label="@string/instructions"
-            android:parentActivityName=".ChoosenActivity"
+            android:parentActivityName="com.moheeeetgupta.ladybuddy.ChoosenActivity"
             android:theme="@style/Theme.New" />
         <activity
-            android:name=".Outside"
+            android:name="com.moheeeetgupta.ladybuddy.Outside"
             android:exported="true" />
         <activity
-            android:name=".ChangingRoom"
+            android:name="com.moheeeetgupta.ladybuddy.ChangingRoom"
             android:exported="true" />
         <activity
-            android:name=".Bedroom"
+            android:name="com.moheeeetgupta.ladybuddy.Bedroom"
             android:exported="true" />
         <activity
-            android:name=".Bathroom"
+            android:name="com.moheeeetgupta.ladybuddy.Bathroom"
             android:exported="true" />
         <activity
-            android:name=".ChoosenActivity"
+            android:name="com.moheeeetgupta.ladybuddy.ChoosenActivity"
             android:exported="true"
             android:label="@string/choose_buttons"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.moheeeetgupta.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
         <activity
-            android:name=".NewsActivity"
+            android:name="com.moheeeetgupta.ladybuddy.NewsActivity"
             android:exported="true"
             android:label="@string/news"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.moheeeetgupta.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
         <activity
-            android:name=".Instructions"
+            android:name="com.moheeeetgupta.ladybuddy.Instructions"
             android:label="@string/instruction"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.moheeeetgupta.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
-        <activity android:name=".webactivity" />
+        <activity android:name="com.moheeeetgupta.ladybuddy.webactivity" />
         <activity
-            android:name=".SmsActivity"
+            android:name="com.moheeeetgupta.ladybuddy.SmsActivity"
             android:label="@string/setting"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="com.moheeeetgupta.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
-        <activity android:name=".CurrentLocation" />
-        <activity android:name=".Flashing" />
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.moheeeetgupta.ladybuddy.CurrentLocation" />
+        <activity android:name="com.moheeeetgupta.ladybuddy.Flashing" />
+        <activity android:name="com.moheeeetgupta.ladybuddy.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.moheeeetgupta.ladybuddy.MainActivity" />
 
-        <receiver android:name=".ScreenOnOffReceiver">
+        <receiver android:name="com.moheeeetgupta.ladybuddy.ScreenOnOffReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_OFF" />
                 <action android:name="android.intent.action.SCREEN_ON" />
@@ -89,7 +89,7 @@
         </receiver>
 
         <service
-            android:name=".ScreenOnOffBackgroundService"
+            android:name="com.moheeeetgupta.ladybuddy.ScreenOnOffBackgroundService"
             android:enabled="true"
             android:exported="false" />
     </application>

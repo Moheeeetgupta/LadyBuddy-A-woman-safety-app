@@ -1,15 +1,10 @@
 package com.moheeeetgupta.ladybuddy;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearSnapHelper;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.SnapHelper;
 
 import android.Manifest;
 import android.content.Intent;
@@ -19,20 +14,10 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     CardView siren, location, Settings, currentlocation, community, news, aboutUs;
@@ -67,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     "Emergency Calling needs CALL PHONE permission\n" +
                     "\n" +
                     "Declaration:- The app is solely developed by INDIAN Developers and all data related to this app is stored locally in your phone.\n");
+
             CheckBox checkbox = (CheckBox)mView.findViewById(R.id.checkBox);
             TextView checkBoxtext = (TextView)mView.findViewById(R.id.checkBoxText);
             checkbox.setVisibility (View.VISIBLE);
@@ -75,10 +61,10 @@ public class MainActivity extends AppCompatActivity {
             checkBoxtext.setEnabled (true);
 
             checkbox.setText("");
-            checkBoxtext.setText(Html.fromHtml("I agree to the " +
-                    "<a href='https://www.websitepolicies.com/policies/view/sLfvQSXP'>TERMS AND CONDITIONS</a>"));
-            textView.setClickable(true);
-            textView.setMovementMethod(LinkMovementMethod.getInstance());
+            checkBoxtext.setText(Html.fromHtml("I accept the " +
+                    "<a href='https://www.websitepolicies.com/policies/view/IaK4RjyB'>PRIVACY POLICY </a>"+"of the app"));
+            checkBoxtext.setClickable(true);
+            checkBoxtext.setMovementMethod(LinkMovementMethod.getInstance());
             alert.setView(mView);
             final AlertDialog alertDialog = alert.create();
             alertDialog.setCanceledOnTouchOutside(false);
