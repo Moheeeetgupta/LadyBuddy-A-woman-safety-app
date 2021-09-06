@@ -18,7 +18,10 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.teamDroiders.ladybuddy.AboutUs"
-            android:exported="true" />
+            android:exported="true"
+            android:label="AboutUs"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
+            android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.MagBtnInst"
             android:exported="true" />
