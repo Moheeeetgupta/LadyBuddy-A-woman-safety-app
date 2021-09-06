@@ -51,7 +51,10 @@
             android:exported="true" />
         <activity
             android:name="com.teamDroiders.ladybuddy.Bedroom"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Bedroom Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MagnoInst"
+            android:theme="@style/Theme.New"/>
         <activity
             android:name="com.teamDroiders.ladybuddy.Bathroom"
             android:exported="true" />
