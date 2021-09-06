@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Bathroom">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="25dp"
+        app:cardCornerRadius="15dp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:text="Detailed instructions "
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp"
+            android:background="@color/lightGray">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textMultiLine"
+                android:padding="6dp"
+                android:text="Installation of Hidden cameras at various public places used by women has been one
+of the greatest havoc problems of women's self respect and dignity.
+
+So, This feature of ladyBuddy helps women to detect hidden cameras anywhere.\n\nTypes of Hidden cameras :-\n\n1. Hidden cameras which emit IR rays :-\n\nYour phone's camera with night vision can detect the blinking of these rays same as we test the remote control of TV . \n\n2. Advanced Electronic Hidden cameras :-\n\nThese cameras do not emit IR rays but as these are electronic cameras so they radiate Electromagnetic radiations.\n\nAnd we have developed a simulation by the help of the magnetometer sensor of your phone which helps you detect any electronic device. \nBut as the hidden cameras are installed mostly at those places where use of electronic devices is not needed. \nSo, detecting any electronic device at those places ensures the chances of spy camera installation.
+
+\nYou have to just move and scan all the suspected places by your phone and if there is any hidden camera then LadyBuddy will start beeping. Make sure that the phone is very much close to the suspected area.\n\n"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

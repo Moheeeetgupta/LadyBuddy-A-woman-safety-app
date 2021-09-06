@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp">
+<TextView
+    android:id="@+id/heading"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text=""
+    android:textStyle="bold"
+    android:textSize="18dp"
+    android:gravity="center_horizontal"
+    />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:layout_marginTop="5dp"
+        android:background="@color/lightGray">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="start"
+                android:paddingLeft="5dp"
+                android:paddingRight="2dp"
+                android:textSize="14dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textFormodal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingLeft="5dp"
+            android:inputType="textMultiLine"
+            android:paddingRight="2dp"
+            android:text=""
+            android:textAlignment="textStart"
+            android:textSize="14sp" />
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="start"
+                android:paddingLeft="5dp"
+                android:paddingRight="2dp"
+                android:textSize="14dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingLeft="5dp"
+                android:inputType="textMultiLine"
+                android:paddingRight="2dp"
+                android:text=""
+                android:textAlignment="textStart"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/call"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="start"
+                android:paddingLeft="5dp"
+                android:paddingRight="2dp"
+                android:textSize="14dp"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textCall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingLeft="5dp"
+                android:inputType="textMultiLine"
+                android:paddingRight="2dp"
+                android:text=""
+                android:textAlignment="textStart"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/declaration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="2dp"
+                android:textSize="14dp"
+                android:layout_marginTop="15dp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textDeclaration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:paddingLeft="5dp"
+                android:inputType="textMultiLine"
+                android:paddingRight="2dp"
+                android:text=""
+                android:textAlignment="textStart"
+                android:textSize="14sp"
+                android:layout_marginBottom="10dp"/>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:enabled="false"
+            android:textColor="@color/colorPrimary"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/checkBoxText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:enabled="false"
+            android:text="TextView"
+            android:visibility="invisible" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_okay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="2dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@drawable/button"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Okay"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+</LinearLayout>

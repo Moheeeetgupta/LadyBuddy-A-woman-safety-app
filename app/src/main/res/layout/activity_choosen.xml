@@ -40,14 +40,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/date"
-                app:srcCompat="@drawable/date" />
+                android:src="@drawable/ic_security_camera"
+                app:srcCompat="@drawable/ic_security_camera" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Detect Electronic Device"
+                android:text="Detect High Tech Spy Cameras"
                 android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="18sp" />
 
@@ -83,14 +83,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/bug"
-                app:srcCompat="@drawable/bug" />
+                android:src="@drawable/ic_idea"
+                app:srcCompat="@drawable/ic_idea" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Instructions"
+                android:text="Tips for manual detection"
                 android:textColor="@color/common_google_signin_btn_text_light_pressed"
                 android:textSize="18sp" />
 

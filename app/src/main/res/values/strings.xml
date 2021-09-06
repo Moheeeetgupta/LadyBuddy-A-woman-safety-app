@@ -14,4 +14,6 @@
     <string name="news">News</string>
     <string name="choose_buttons">Detect Spy</string>
     <string name="instructions">Instructions</string>
+    <string name="settings">Settings</string>
+    <string name="textwarn">Wraning to accept permission</string>
 </resources>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moheeeetgupta.ladybuddy">
+    package="com.teamDroiders.ladybuddy">
 
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,61 +17,70 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Magnetometer"
+            android:name="com.teamDroiders.ladybuddy.AboutUs"
             android:exported="true" />
         <activity
-            android:name=".MagnoInst"
+            android:name="com.teamDroiders.ladybuddy.MagBtnInst"
+            android:exported="true" />
+        <activity
+            android:name="com.teamDroiders.ladybuddy.SosInsructionsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.teamDroiders.ladybuddy.Magnetometer"
+            android:exported="true" />
+        <activity
+            android:name="com.teamDroiders.ladybuddy.MagnoInst"
             android:exported="true"
-            android:label="@string/instructions"
-            android:parentActivityName=".ChoosenActivity"
+            android:label="Manual Detection"
+            android:parentActivityName="com.teamDroiders.ladybuddy.ChoosenActivity"
             android:theme="@style/Theme.New" />
         <activity
-            android:name=".Outside"
+            android:name="com.teamDroiders.ladybuddy.Outside"
             android:exported="true" />
         <activity
-            android:name=".ChangingRoom"
+            android:name="com.teamDroiders.ladybuddy.ChangingRoom"
             android:exported="true" />
         <activity
-            android:name=".Bedroom"
+            android:name="com.teamDroiders.ladybuddy.Bedroom"
             android:exported="true" />
         <activity
-            android:name=".Bathroom"
+            android:name="com.teamDroiders.ladybuddy.Bathroom"
             android:exported="true" />
         <activity
-            android:name=".ChoosenActivity"
+            android:name="com.teamDroiders.ladybuddy.ChoosenActivity"
             android:exported="true"
-            android:label="@string/choose_buttons"
-            android:parentActivityName=".MainActivity"
+            android:label="Detect Hidden Cameras"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
         <activity
-            android:name=".NewsActivity"
+            android:name="com.teamDroiders.ladybuddy.NewsActivity"
             android:exported="true"
-            android:label="@string/news"
-            android:parentActivityName=".MainActivity"
+            android:label="Women's News"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
         <activity
-            android:name=".Instructions"
-            android:label="@string/instruction"
-            android:parentActivityName=".MainActivity"
+            android:name="com.teamDroiders.ladybuddy.Instructions"
+            android:label="App Tour"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
-        <activity android:name=".webactivity" />
+        <activity android:name="com.teamDroiders.ladybuddy.webactivity" />
         <activity
-            android:name=".SmsActivity"
-            android:label="@string/setting"
-            android:parentActivityName=".MainActivity"
+            android:name="com.teamDroiders.ladybuddy.SmsActivity"
+            android:label="Emergency Service"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
             android:theme="@style/Theme.New" />
-        <activity android:name=".CurrentLocation" />
-        <activity android:name=".Flashing" />
-        <activity android:name=".SplashActivity">
+        <activity android:name="com.teamDroiders.ladybuddy.CurrentLocation" />
+        <activity android:name="com.teamDroiders.ladybuddy.Flashing" />
+        <activity android:name="com.teamDroiders.ladybuddy.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.teamDroiders.ladybuddy.MainActivity" />
 
-        <receiver android:name=".ScreenOnOffReceiver">
+        <receiver android:name="com.teamDroiders.ladybuddy.ScreenOnOffReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.SCREEN_OFF" />
                 <action android:name="android.intent.action.SCREEN_ON" />
@@ -80,7 +89,7 @@
         </receiver>
 
         <service
-            android:name=".ScreenOnOffBackgroundService"
+            android:name="com.teamDroiders.ladybuddy.ScreenOnOffBackgroundService"
             android:enabled="true"
             android:exported="false" />
     </application>

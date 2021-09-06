@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/windowBackground"
+    android:background="@color/lightGray"
     tools:context=".SmsActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="100dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,20 +21,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
+            android:elevation="8dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
-            app:cardElevation="5dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
-            android:elevation="8dp">
+            app:cardElevation="5dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:textColorHint="@android:color/white"
+                android:theme="@style/EditTextThemeOverlay"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColorHint="@color/design_default_color_on_secondary"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -42,16 +43,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:padding="1dp"
                     android:layout_marginRight="10dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter first phone number..."
                     android:inputType="phone"
-                    android:shadowColor="@android:color/white"
-                    android:textColor="@android:color/white"
-                    android:textColorHighlight="@android:color/white"
-                    android:textColorHint="@android:color/white"
-                    android:textColorLink="@android:color/white" />
+                    android:textColor="@color/design_default_color_on_secondary"
+                   />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -59,8 +56,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
             android:elevation="5dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -68,7 +65,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="@color/design_default_color_on_secondary"
+                android:theme="@style/EditTextThemeOverlay"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,14 +78,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:padding="1dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter second phone number..."
                     android:inputType="phone"
-                    android:textColor="@android:color/white"
-                    android:textColorHighlight="@android:color/white"
-                    android:textColorHint="@android:color/white"
-                    android:textColorLink="@android:color/white" />
+                    android:padding="1dp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                   />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -95,8 +91,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
             android:elevation="5dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -104,7 +100,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="@color/design_default_color_on_secondary"
+                android:theme="@style/EditTextThemeOverlay"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -116,14 +113,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:padding="1dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter third phone number..."
                     android:inputType="phone"
-                    android:textColor="@android:color/white"
-                    android:textColorHighlight="@android:color/white"
-                    android:textColorHint="@android:color/white"
-                    android:textColorLink="@android:color/white" />
+                    android:padding="1dp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -131,8 +126,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
             android:elevation="5dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -140,7 +135,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="@color/design_default_color_on_secondary"
+                android:theme="@style/EditTextThemeOverlay"
                 app:layout_constraintBottom_toTopOf="@+id/messagelayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -151,14 +147,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:padding="1dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter fourth phone number..."
                     android:inputType="phone"
-                    android:textColor="@android:color/white"
-                    android:textColorHighlight="@android:color/white"
-                    android:textColorHint="@android:color/white"
-                    android:textColorLink="@android:color/white" />
+                    android:padding="1dp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                     />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
 
@@ -166,8 +160,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="12dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark"
             android:elevation="5dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp">
 
             <com.google.android.material.textfield.TextInputLayout
@@ -175,7 +169,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:textColorHint="@android:color/white"
+                android:textColorHint="@color/design_default_color_on_secondary"
+                android:theme="@style/EditTextThemeOverlay"
                 app:layout_constraintBottom_toTopOf="@+id/button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -186,15 +181,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:padding="1dp"
                     android:layout_marginRight="10dp"
                     android:background="@android:color/transparent"
                     android:hint="Enter message..."
                     android:inputType="text"
-                    android:textColor="@android:color/white"
-                    android:textColorHighlight="@android:color/white"
-                    android:textColorHint="@android:color/white"
-                    android:textColorLink="@android:color/white" />
+                    android:padding="1dp"
+                    android:textColor="@color/design_default_color_on_secondary"
+                     />
             </com.google.android.material.textfield.TextInputLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -208,10 +201,11 @@
         android:layout_marginEnd="103dp"
         android:layout_marginRight="103dp"
         android:layout_marginBottom="118dp"
-        android:background="@drawable/button"
+        android:background="@color/white"
+        android:clickable="true"
         android:onClick="btn_send"
-        android:text="Try it!"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:text="Try it"
+        android:textColor="@color/design_default_color_on_secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Save_btn" />
@@ -223,9 +217,12 @@
         android:layout_marginStart="103dp"
         android:layout_marginLeft="103dp"
         android:layout_marginBottom="118dp"
-        android:background="@drawable/button"
+        android:background="@color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:text="Save "
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColor="@color/design_default_color_on_secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent" />
