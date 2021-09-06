@@ -17,10 +17,12 @@ import android.net.Uri;
 import android.os.CountDownTimer;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -48,13 +50,15 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
         @Override
         public void onTick(long millisUntilFinished) {
             timer++;
+
             Log.d (SCREEN_TOGGLE_TAG, "time"+timer);
 
         }
 
         @Override
         public void onFinish() {
-            timer=30;
+            timer=0;
+            powerBtnTapCount=0;
         }
     };
     @Override
@@ -76,6 +80,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
                }
            }else{
                powerBtnTapCount=0;
+
                if (Intent.ACTION_SCREEN_OFF.equals (action) || Intent.ACTION_SCREEN_ON.equals (action)) {  // ACTION_SCREEN_OFF :- read by just tapping on it where this is used
                    powerBtnTapCount++;
                    countDownTimer.start ();
@@ -98,6 +103,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
         }
         if (powerBtnTapCount ==3) { // ?
             if(mediaPlayer.isPlaying ()){
+                mediaPlayer.stop ();
                 mediaPlayer.setLooping (false);
                 mediaPlayer=null;
             }
@@ -117,37 +123,46 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
 
             tryIt (context);
 
-            Log.d ("jkjkl", Value1 + " " + Value2 + " " + Value3 + " " + Value4 + " " + Value + " ");
 
         }
-
-
 
     }
 
     public void tryIt(Context context) {
         SendLocationMessage (context);
 
+        if(!Value1.trim ().equals ("")) {
+            /**
+             * ContextCompat :- It is a class for replacing some work with base context.
+             * For example if you used before something like getContext().getColor(R.color.black);
+             * Now its deprecated since android 6.0 (API 22+) so you should use: getContext().getColor(R.color.black,theme);
+             */
+            if (ContextCompat.checkSelfPermission (context, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                makeCall (context);
+            }
+        }
 
+
+    }
+
+    //Calling function
+    private void makeCall(Context context) {
         //Calling function
         Intent intent = new Intent (Intent.ACTION_CALL); // ACTION_CALL :- read about it by tapping on where it is used
         String phoneNumber = Value1;
         intent.setData (Uri.parse ("tel:" + phoneNumber)); // intent.setData() and Uri.parse() :- read about it by tapping on where it is used
 
-        // CALL_PHONE :- read about it by tapping on where it is used
-        if (ActivityCompat.checkSelfPermission (context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-
-            return;
-        }
 
         // setFlags(), FLAG_ACTIVITY_NEW_TASK and FLAG_ACTIVITY_CLEAR_TASK :- read about these all by tapping on where it is used
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.addFlags(Intent. FLAG_ACTIVITY_NEW_TASK);
+
 
         context.startActivity (intent);
+//        intent.setFlags (Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        Log.d ("Called on  ", Value1 );
+
 
     }
-
-
 
     private void SendLocationMessage(final Context context) {
 
@@ -165,7 +180,9 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
                 if (location != null) {
 
                     try {
-                        // Geocoder, Locale.getDefault() :- read about these all by tapping on where it is used
+
+
+                        // Locale.getDefault() :- read about these all by tapping on where it is used
                         //Initialize Geocoder
                         Geocoder geocoder = new Geocoder (context, Locale.getDefault ());
                         //Initialize adress list
@@ -189,6 +206,7 @@ public class ScreenOnOffReceiver extends BroadcastReceiver {
                 String phoneNumber2 =Value2;
                 String phoneNumber3 = Value3;
                 String phoneNumber4 = Value4;
+                Log.d ("Message sent as  ", Value1 + " " + Value2 + " " + Value3 + " " + Value4 + " " + Value + " ");
 
                 if (!Value1.equals ("") || !Value2.equals ("") || !Value3.equals ("") || !Value4.equals ("")) {
                     if (!Value1.equals ("")) {
