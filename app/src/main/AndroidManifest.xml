@@ -27,7 +27,10 @@
             android:exported="true" />
         <activity
             android:name="com.teamDroiders.ladybuddy.SosInsructionsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="SOS Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.SmsActivity"
+            android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.Magnetometer"
             android:exported="true"
