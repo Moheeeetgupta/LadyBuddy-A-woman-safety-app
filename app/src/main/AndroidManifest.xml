@@ -45,7 +45,10 @@
             android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.Outside"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Outside Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MagnoInst"
+            android:theme="@style/Theme.New"/>
         <activity
             android:name="com.teamDroiders.ladybuddy.ChangingRoom"
             android:exported="true"
