@@ -30,7 +30,10 @@
             android:exported="true" />
         <activity
             android:name="com.teamDroiders.ladybuddy.Magnetometer"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Spy Camera Dectector"
+            android:parentActivityName="com.teamDroiders.ladybuddy.ChoosenActivity"
+            android:theme="@style/Theme.New" />/>
         <activity
             android:name="com.teamDroiders.ladybuddy.MagnoInst"
             android:exported="true"
