@@ -152,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
                     shareIntent.putExtra(Intent.EXTRA_SUBJECT, "LadyBuddy");
-                    String shareMessage= "\nLet me recommend you this application.\nUse and Experience this women's safety app\n\nDownload here !\n";
-                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+                    String shareMessage= "*LadyBuddy* solves a very heart wrenching problem of our civilisation, *Women's Safety*. \n\nJust download,start using, and spread the app \n\nSo that any female related to you can feel safer and empowered in this world. \n\nDownload LadyBuddy at:-\n";
+
+                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID ;
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                     startActivity(Intent.createChooser(shareIntent, "Share"));
                 } catch(Exception e) {

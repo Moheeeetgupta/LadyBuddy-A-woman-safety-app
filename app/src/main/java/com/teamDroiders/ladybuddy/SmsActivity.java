@@ -261,7 +261,7 @@ public class SmsActivity extends AppCompatActivity {
                 if (location != null) {
 
                     try {
-                        // Read about Geocoder by just tapping on where it is written
+                        // Read about Geocoder by just hover on where it is written
                         //Initialize Geocoder
                         Geocoder geocoder = new Geocoder (SmsActivity.this, Locale.getDefault ());
                         //Initialize address list
