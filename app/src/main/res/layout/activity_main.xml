@@ -324,8 +324,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
-                    android:text="Share and Save Lifes"
                     android:gravity="center"
+                    android:text="Share and Save Lives"
                     android:textColor="@color/common_google_signin_btn_text_light_pressed"
                     android:textSize="16sp" />
 
