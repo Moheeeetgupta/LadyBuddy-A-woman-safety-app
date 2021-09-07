@@ -40,7 +40,9 @@ The android app lets you:
 - After that we need to give some permissions to the app then  the home screen with 7 CardView Buttons is displayed.
 - These Seven Card View buttons  include Emergency SOS ,Hidden Camera Detector, women's News ,Siren Alarm, App Tour, About Us, Share and save lives.
 - When we enter into :-
+
 1.Emergency SOS service then phone no. of relatives is saved by the help of shared preferences in the form of key value pair and when we tap on the try it button then a phone call is made by the help of implicit intent and a message is sent by the help of SMS Manager class and this message is also embedded with the live location of the user which is provided by the help of fusedlocationprovider client API.
+
 - Now,As we also need to trigger this functionality even when the phone is locked .So, whenever the phone is in locked state then the app is in paused state therefore we can't perform any action in background .So a background service is registered inside the app so that even if the phone is in locked state some functionalities could get executed.
 - Now,A broadcast receiver is registered inside the background service in order to receive the broadcast message from OS about the screen ON/OFF state to count the power button tap count.
 - And a timer also gets started when we tap the power button first time and if we tap power button three times then the try it fuinctionality is executed and if tapped six times before 30 secs  then a siren alarm gets started in order to deviate the culprit and if again tapped power button 3 times then alarm will stop.
@@ -52,6 +54,10 @@ The android app lets you:
 4.Siren Alarm then this screen starts a siren alarm in looping by the help of media player API.
 
 5.About Us then user can read about us and can also contact us by the help of implicit intents.
+
+6.App tour then get the whole tour of the app.
+
+7.Share app then they can share and save lives.
 
 ## Technologies, Libraries and Components Used
 Technologies and Libraries used:
