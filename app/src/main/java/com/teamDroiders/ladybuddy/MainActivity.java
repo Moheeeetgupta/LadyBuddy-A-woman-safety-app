@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     String shareMessage= "\nLet me recommend you this application.\nUse and Experience this women's safety app\n\nDownload here !\n";
                     shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
                     shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-                    startActivity(Intent.createChooser(shareIntent, "Share Via"));
+                    startActivity(Intent.createChooser(shareIntent, "Share"));
                 } catch(Exception e) {
                     //e.toString();
                 }
