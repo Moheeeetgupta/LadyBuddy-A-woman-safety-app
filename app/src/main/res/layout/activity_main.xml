@@ -72,15 +72,17 @@
 
                     <ImageView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="92dp"
                         android:src="@drawable/ic_sos"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_sos" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Emergency SOS"
+                        android:text="Emergency\nSOS"
+                        android:gravity="center"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
                         android:textSize="16sp" />
 
@@ -111,6 +113,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:src="@drawable/ic_photographer__new"
                         app:srcCompat="@drawable/ic_photographer__new" />
 
@@ -119,7 +122,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Hidden Camera "
+                        android:text="Hidden\nCamera "
+                        android:gravity="center"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
                         android:textSize="16sp" />
 
@@ -151,13 +155,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_world_news"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_world_news" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Women's News"
+                        android:text="Women's\nNews"
+                        android:gravity="center"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
                         android:textSize="16sp" />
 
@@ -188,6 +194,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:src="@drawable/ic_siren_new"
                         app:srcCompat="@drawable/ic_siren_new" />
 
@@ -195,7 +202,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Siren Alert"
+                        android:text="Siren\nAlert"
+                        android:gravity="center"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
                         android:textSize="16sp" />
 
@@ -226,6 +234,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:src="@drawable/ic_app_overview"
                         app:srcCompat="@drawable/ic_app_overview" />
 
@@ -233,7 +242,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="App Tour"
+                        android:text="App\nTour"
+                        android:gravity="center"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
                         android:textSize="16sp" />
 
@@ -265,13 +275,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_about_us"
+                        android:layout_gravity="center"
                         app:srcCompat="@drawable/ic_about_us" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="About Us"
+                        android:text="About\nUs"
+                        android:gravity="center"
                         android:textColor="@color/common_google_signin_btn_text_light_pressed"
                         android:textSize="16sp" />
 
@@ -303,10 +315,10 @@
                 android:padding="16dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_world_news"
-                    app:srcCompat="@drawable/ic_world_news" />
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_share"
+                    app:srcCompat="@drawable/ic_share" />
 
                 <TextView
                     android:layout_width="wrap_content"

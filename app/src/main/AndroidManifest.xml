@@ -24,7 +24,10 @@
             android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.MagBtnInst"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Detailed Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.Magnetometer"
+            android:theme="@style/Theme.New"/>
         <activity
             android:name="com.teamDroiders.ladybuddy.SosInsructionsActivity"
             android:exported="true"
