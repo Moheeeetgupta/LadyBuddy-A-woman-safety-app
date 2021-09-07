@@ -18,16 +18,25 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.teamDroiders.ladybuddy.AboutUs"
-            android:exported="true" />
+            android:exported="true"
+            android:label="AboutUs"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MainActivity"
+            android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.MagBtnInst"
             android:exported="true" />
         <activity
             android:name="com.teamDroiders.ladybuddy.SosInsructionsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="SOS Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.SmsActivity"
+            android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.Magnetometer"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Spy Camera Dectector"
+            android:parentActivityName="com.teamDroiders.ladybuddy.ChoosenActivity"
+            android:theme="@style/Theme.New" />/>
         <activity
             android:name="com.teamDroiders.ladybuddy.MagnoInst"
             android:exported="true"
@@ -36,16 +45,28 @@
             android:theme="@style/Theme.New" />
         <activity
             android:name="com.teamDroiders.ladybuddy.Outside"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Outside Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MagnoInst"
+            android:theme="@style/Theme.New"/>
         <activity
             android:name="com.teamDroiders.ladybuddy.ChangingRoom"
-            android:exported="true" />
+            android:exported="true"
+            android:label="ChangingRoom Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MagnoInst"
+            android:theme="@style/Theme.New"/>
         <activity
             android:name="com.teamDroiders.ladybuddy.Bedroom"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Bedroom Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MagnoInst"
+            android:theme="@style/Theme.New"/>
         <activity
             android:name="com.teamDroiders.ladybuddy.Bathroom"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Bathroom Instructions"
+            android:parentActivityName="com.teamDroiders.ladybuddy.MagnoInst"
+            android:theme="@style/Theme.New"/>
         <activity
             android:name="com.teamDroiders.ladybuddy.ChoosenActivity"
             android:exported="true"
