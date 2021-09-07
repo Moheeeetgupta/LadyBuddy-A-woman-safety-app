@@ -5,10 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 
 import android.Manifest;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
@@ -19,8 +24,13 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
-    CardView siren, location, Settings, currentlocation, community, news, aboutUs;
+    CardView siren, location, Settings, currentlocation, community, news, aboutUs, shareBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -127,9 +137,33 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity( new Intent( getApplicationContext(), AboutUs.class ) );
             }
+
         } );
 
+        shareBtn = findViewById(R.id.ShareBtn);
+        shareBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+
+
+               try {
+                    Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                    shareIntent.setType("text/plain");
+                    shareIntent.putExtra(Intent.EXTRA_SUBJECT, "LadyBuddy");
+                    String shareMessage= "\nLet me recommend you this application.\nUse and Experience this women's safety app\n\nDownload here !\n";
+                    shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+                    startActivity(Intent.createChooser(shareIntent, "Share Via"));
+                } catch(Exception e) {
+                    //e.toString();
+                }
+            }
+        });
+
     }
+
 
 
 
