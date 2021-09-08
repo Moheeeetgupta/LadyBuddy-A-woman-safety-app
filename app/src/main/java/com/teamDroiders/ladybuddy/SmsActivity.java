@@ -353,7 +353,6 @@ public class SmsActivity extends AppCompatActivity {
     }
 
     @Override
-    // for performing logout operation when logout menu button in actionbar has tapped.
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
